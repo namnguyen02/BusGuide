@@ -11,9 +11,12 @@ export const MainNavigator = () => {
       
       
       <Tab.Screen
-        name="Feed"
+        name="Home"
         component={HomeContainer}
         options={{
+          
+            headerShown: false,
+          
           tabBarLabel: 'Tra cứu',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="map-outline" color={color} size={size} />
