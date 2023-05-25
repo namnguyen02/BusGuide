@@ -8,6 +8,7 @@ import {
   Image,
   TouchableOpacity,
   Switch,
+  Pressable,
 } from 'react-native';
 
 import FeatherIcon from 'react-native-vector-icons/Feather';
@@ -33,10 +34,11 @@ export const PermissionScreen = ({navigation}) =>  {
   });
 
   return (
-    <SafeAreaView style={{ backgroundColor: '#f6f6f6' }}>
+    <SafeAreaView style={{ backgroundColor: '#fff' }}>
       <ScrollView contentContainerStyle={styles.container}>
           <Text style={styles.title}>Quyền</Text>
           <Text style={styles.description}>Chúng tôi sử dụng quyền của ứng dụng để giúp bạn tránh gặp trở ngại khi sử dụng</Text>
+        <View style={{marginHorizontal: 12, marginBottom: 24}}>
         {PERMISSIONS.map(({ id, label, icon, description }, index) => {
           return (
             <View
@@ -66,6 +68,10 @@ export const PermissionScreen = ({navigation}) =>  {
             </View>
           );
         })}
+        </View>
+        <Pressable style={styles.saveBtn}>
+            <Text style={{color: '#fff'}}>Lưu</Text>
+        </Pressable>
       </ScrollView>
     </SafeAreaView>
   );
@@ -133,5 +139,19 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     flexShrink: 1,
     flexBasis: 0,
+  },
+  saveBtn: {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "center",
+      alignItems: "center",
+      paddingHorizontal: 10,
+      height: 54,
+      backgroundColor: "#1A1528",
+      borderRadius: 16,
+      order: 0,
+      alignSelf: "stretch",
+      flexGrow: 0,
+      marginHorizontal:24,
   },
 });

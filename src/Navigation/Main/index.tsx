@@ -1,6 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { HomeContainer } from "@/Screens/Home";
+import { SettingStack } from "@/Screens/Setting";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 const Tab = createBottomTabNavigator();
 
@@ -8,8 +9,8 @@ const Tab = createBottomTabNavigator();
 export const MainNavigator = () => {
   return (
     <Tab.Navigator>
-      
-      
+
+
       <Tab.Screen
         name="Home"
         component={HomeContainer}
@@ -21,7 +22,7 @@ export const MainNavigator = () => {
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="map-outline" color={color} size={size} />
           ),
-          
+
         }}
       />
       <Tab.Screen
@@ -31,7 +32,7 @@ export const MainNavigator = () => {
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="ticket-confirmation-outline" color={color} size={size} />
           ),
-          
+
         }}
       />
       <Tab.Screen
@@ -41,17 +42,17 @@ export const MainNavigator = () => {
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="account" color={color} size={size} />
           ),
-         
+
         }}
       />
       <Tab.Screen
         name="Cài đặt"
-        component={HomeContainer}
+        component={SettingStack}
         options={{
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="cog-outline" color={color} size={size} />
           ),
-          
+
         }}
       />
     </Tab.Navigator>
