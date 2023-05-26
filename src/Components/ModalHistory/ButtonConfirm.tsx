@@ -1,11 +1,12 @@
 import { View, Text ,StyleSheet, Pressable, Alert} from 'react-native'
 import React from 'react'
 
-const ButtonConfirm = ({setModalVisible,setModalSuitableVisible}) => {
+const ButtonConfirm = ({setModalVisible,setSuitableVisible}) => {
   return (
     <Pressable style={styles.container} 
-        onPress={()=>{setModalVisible(false) //tat history modal
-                setModalSuitableVisible(true)  //hien cac chuyen xe phu hop
+        onPress={()=>{setModalVisible(false); //tat history modal
+                setSuitableVisible(true);  //hien cac chuyen xe phu hop
+                console.log('nhan');
                 }}>
       <Text style={{color:'white'}}>Xác Nhận</Text>
     </Pressable>

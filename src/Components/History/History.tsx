@@ -45,13 +45,14 @@ const style=StyleSheet.create({
   },
   header:{
     width:'100%',
-    height:'40%',
+    height:'30%',
     backgroundColor:'white',
     flexDirection:'row'
 
   },
   context:{
-    flex:5
+    flex:5,
+    
   },
   bigContext:{
     flex:1,
@@ -65,10 +66,12 @@ const style=StyleSheet.create({
     flex:1,
     backgroundColor:'white',
     textAlign:'center',
-    justifyContent:'center'
+    justifyContent:'center',
+    
   },
   main:{
     height:'70%',
+    
    
     
   }

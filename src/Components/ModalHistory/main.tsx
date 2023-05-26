@@ -8,7 +8,7 @@ import PosImg2 from '../../../assets/PositionImg/img2.png'
 import PosImg3 from '../../../assets/PositionImg/img3.png'
 import ButtonConfirm from './ButtonConfirm'
 import SavedComponent from './SavedComponent'
-const ModalHistory = ({setModalVisible,setModalSuitableVisible}) => {
+const ModalHistory = ({setModalVisible,setSuitableVisible}) => {
   return (
     <View style={styles.container}>
           <Text style={{fontSize:20, fontWeight:'bold'}}>Lịch sử tìm kiếm</Text>
@@ -36,7 +36,7 @@ const ModalHistory = ({setModalVisible,setModalSuitableVisible}) => {
             <SavedComponent Type={3}></SavedComponent>
           </ScrollView>
           
-          <ButtonConfirm setModalSuitableVisible={setModalSuitableVisible}
+          <ButtonConfirm setSuitableVisible={setSuitableVisible}
                           setModalVisible={setModalVisible}
           ></ButtonConfirm>
           

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Image } from "expo-image";
-import { StyleSheet, View, Text, Pressable } from "react-native";
+
+import { StyleSheet, View, Text, Pressable ,Image} from "react-native";
 import {
   TextInput as RNPTextInput,
   Checkbox as RNPCheckbox,

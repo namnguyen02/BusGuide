@@ -25,11 +25,42 @@ export interface IHomeProps {
 export const Home = (props: IHomeProps) => {
   const Stack=createNativeStackNavigator();
   const [modalHistoryVisible, setModalHistoryVisible] = useState(false);
-    const [modalSuitableVisible, setModalSuitableVisible] = useState(false);
+    const [suitableVisible, setSuitableVisible] = useState(false);
     const [ShowModal,setShowModal]=useState(false);
   const { data, isLoading } = props;
+
+  const Main_map=({navigation})=>{
+    if(suitableVisible) { navigation.navigate('Main_Suitable')};
+    return (
+      
+          <View style={{height:'100%',width:'100%'}}>
+            <Map></Map>
+             <History setModalVisible={setModalHistoryVisible}></History>
+            
+          </View>
+      
+      
+      
+    );
+  
+  
+  };
+  const Main_Suitable=({navigation})=>{
+    setSuitableVisible(false);
+    return (
+      
+  
+          <ModalSuitableCar></ModalSuitableCar>
+          
+    );
+  };
+
+
   return (
     
+    
+
+
     <View style={styles.container}>
       <View style={styles.top}> 
         
@@ -44,10 +75,8 @@ export const Home = (props: IHomeProps) => {
           <NavigationContainer independent={true}>
             <Stack.Navigator screenOptions={{headerShown:false}}>
               <Stack.Screen
-                name="main_map"
+                name="Main_map"
                 component={Main_map}
-                initialParams={{setModalHistoryVisible:{setModalHistoryVisible}}}
-                param
                 options={{title:'welcome'}}
               />
 
@@ -60,9 +89,10 @@ export const Home = (props: IHomeProps) => {
 
       <Modal animationType="slide"
         transparent={true}
-        visible={modalHistoryVisible}>
+        visible={modalHistoryVisible}
+        onRequestClose={()=>setModalHistoryVisible(false)}>
               <ModalHistory setModalVisible={setModalHistoryVisible}
-                            setModalSuitableVisible={setModalSuitableVisible}
+                            setSuitableVisible={setSuitableVisible}
               ></ModalHistory>
         
       </Modal>
@@ -89,30 +119,7 @@ export const Home = (props: IHomeProps) => {
   );
 };
 
-const Main_map=({navigation,setModalHistoryVisible})=>{
-  return (
-    
-        <View style={{height:'100%',width:'100%'}}>
-          <Map></Map>
-           
-          <Button title="bam di" onPress={()=>navigation.navigate('Main_Suitable')}></Button>
-        </View>
-    
-    
-    
-  );
 
-
-};
-const Main_Suitable=({navigation})=>{
-  return (
-    // <ModalSuitableCar setModalSuitableVisible={setModalSuitableVisible}
-    //         ></ModalSuitableCar>
-
-        <ModalSuitableCar></ModalSuitableCar>
-        
-  );
-};
 
 const styles = StyleSheet.create({
   space:{

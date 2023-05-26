@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Image } from "expo-image";
-import { StyleSheet, View, Text, TextInput, Pressable } from "react-native";
+
+import { StyleSheet, View, Text, TextInput, Pressable,Image } from "react-native";
 
 const ForgotPasswordSecurityCode = () => {
   return (
