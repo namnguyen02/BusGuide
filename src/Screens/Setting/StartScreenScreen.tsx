@@ -9,68 +9,127 @@ import {
     TouchableOpacity,
     Switch,
     useWindowDimensions,
-    Button
+    Button,
+    Pressable
   } from 'react-native';
-import { TabView, SceneMap } from 'react-native-tab-view';
-
-const TicketRoute = () => (
-    <View style={{ flex: 1, backgroundColor: '#ff4081' }} />
-  );
-
-const SearchRoute = () => (
-    <View style={{ flex: 1, backgroundColor: '#673ab7' }} />
-);
-
-const MyPageRoute = () => (
-    <View style={{ flex: 1, backgroundColor: '#673ab7' }} />
-);
-
-const renderScene = SceneMap({
-    mytickets: TicketRoute,
-    search: SearchRoute,
-    mypage: MyPageRoute,
-});
 
 export const StartScreenScreen = ({navigation}) =>  {
-
-    const layout = useWindowDimensions();
-
-    const [index, setIndex] = React.useState(0);
-    const [routes] = React.useState([
-      { key: 'mytickets', title: 'Vé của tôi' },
-      { key: 'search', title: 'Tra cứu' },
-      { key: 'mypage', title: 'Trang của tôi' },
-    ]);
-
     return (
-      <SafeAreaView >
-        <TabView
-            style = {styles.tabs}
-            navigationState={{ index, routes }}
-            renderScene={renderScene}
-            onIndexChange={setIndex}
-            initialLayout={{ width: layout.width }}
-        />
-        <Button
-            title="Lưu"
-        />
+      <SafeAreaView style={{backgroundColor: '#fff'}}>
+        <View style={{marginHorizontal: 24, marginVertical: 16}}>
+            <View style={{marginBottom: 24}}>
+                <Text style={styles.title}>Màn hình bắt đàu</Text>
+                <Text style={styles.description}>Chọn màn hình xuất hiện khi mở ứng dụng</Text>
+            </View>
+
+            <View style={styles.wrapper}>
+                <View style={styles.startListWrapper}>
+                    <View style={styles.startList}>
+                        <Pressable style={styles.startItem}>
+                            <Text style={{fontSize: 14, margin: 6, fontWeight: '400', color: '#9D9D9D'}}>Nhà riêng</Text>
+                        </Pressable>
+                        <Pressable style={styles.startItem}>
+                            <Text style={{fontSize: 14, margin: 6, fontWeight: '600', color: '#1F1F1F'}}>Nơi làm việc</Text>
+                        </Pressable>
+                        <Pressable style={styles.startItem}>
+                            <Text style={{fontSize: 14, margin: 6, fontWeight: '400', color: '#9D9D9D'}}>Trường học</Text>
+                        </Pressable>
+                    </View>
+                </View>
+                <View style={styles.startScreenSample}>
+                    <View style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
+                        <Image
+                            style={[styles.startImage, {position: 'absolute', right: '50%', height: 240, width: 120}]}
+                            source={require('../../../assets/start/ticket.png')}
+                        />
+                    </View>
+
+                    <View style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
+                        <Image
+                            style={[styles.startImage, {position: 'absolute', left: '50%', height: 240, width: 120}]}
+                            source={require('../../../assets/start/mypage.png')}
+                        />
+                    </View>
+
+                    <View style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
+                        <Image
+                            style={[styles.startImage, {position: 'absolute',}]}
+                            source={require('../../../assets/start/initial.png')}
+                        />
+                    </View>
+                </View>
+            </View>
+
+            <Pressable style={styles.saveBtn}>
+                <Text style={{color: '#fff'}}>Lưu</Text>
+            </Pressable>
+        </View>
       </SafeAreaView>
     );
     // return (
-    //     <View>
-    //         <Text style={styles.title}>Màn hình bắt đàu</Text>
-    //         <Text style={styles.title}>Chọn màn hình xuất hiện khi mở ứng dụng</Text>
-    //     </View>
+        // <View>
+        //     <Text style={styles.title}>Màn hình bắt đàu</Text>
+        //     <Text style={styles.title}>Chọn màn hình xuất hiện khi mở ứng dụng</Text>
+        // </View>
     // )
 
 }
 
 const styles = StyleSheet.create({
     title: {
+        marginBottom: 12, fontSize: 24, fontWeight: '500',
+    },
+    description: {
+        marginBottom: 12, fontSize: 14, fontWeight: '400', color: '#404040',
+    },
+    saveBtn: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+        paddingHorizontal: 10,
+        height: 54,
+        backgroundColor: "#1A1528",
+        borderRadius: 16,
+        order: 0,
+        alignSelf: "stretch",
+        flexGrow: 0,
+        // marginHorizontal:24,
+    },
+    wrapper: {
+    },
+    startListWrapper: {
+        marginBottom: 12,
+        display: 'flex',
+        flexDirection: 'row',
+        alignSelf: 'center',
 
     },
-    tabs: {
-        backgroundColor: '#ccc',
+    startList: {
+        display: 'flex',
+        flexDirection: 'row',
+        height: 44,
+        backgroundColor: '#FAFAFA',
+        borderRadius: 16,
     },
-
+    startItem: {
+        marginHorizontal: 4,
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingHorizontal: 16,
+    },
+    startScreenSample: {
+        backgroundColor: '#FF8811',
+        position: 'relative',
+        borderRadius: 24,
+        height: 380,
+        marginBottom: 12,
+    },
+    startImage: {
+        width: 140,
+        height: 280,
+        borderRadius: 16,
+        borderWidth: 2,
+        borderColor: '#000',
+    }
 })

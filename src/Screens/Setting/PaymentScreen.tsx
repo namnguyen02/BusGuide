@@ -13,45 +13,73 @@ import {
     TextInput,
     Pressable,
   } from 'react-native';
-import { TabView, SceneMap } from 'react-native-tab-view';
 
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export const PaymentScreen = ({navigation}) =>  {
-    const [text, onChangeText] = React.useState('Useless Text');
+    const [text, onChangeText] = React.useState('');
     const [number, onChangeNumber] = React.useState('');
     return (
-      <SafeAreaView >
+      <SafeAreaView style={{backgroundColor: '#fff'}}>
+        <ScrollView>
+        <View style={{marginTop: 10}}>
+            <Text style={styles.title}>Phương thức thanh toán</Text>
+            <Text style={styles.description}>Thêm phương thức thanh toán và thay đổi thứ tự khi thanh toán vé</Text>
+        </View>
+
         <View style={styles.Wrapper}>
             <View style={styles.methodWrapper}>
                 <View style={styles.methodType}>
-                    <Text>Google Wallet</Text>
+                    {/* <Text>Google Wallet</Text> */}
+                    <Image
+                        style={{marginRight: 16}}
+                        source={require('../../../assets/icons/setting/6_point.png')}
+                    />
+                    <Image
+                        style={{}}
+                        source={require('../../../assets/icons/setting/google_wallet.png')}
+                    />
                 </View>
                 <View style={styles.methodInfoLink}>
                     <View style={styles.methodRemainder}>
-                        <Text>Số dư</Text>
-                        <Text>195,00 VND</Text>
+                        <Text style={{fontWeight: '700', fontSize: 14, color: "#9D9D9D", marginBottom: 8}}>Số dư</Text>
+                        <Text style={{fontWeight: '600', fontSize: 20, color: "#1F1F1F" }}>195,00 VND</Text>
                     </View>
                     <Pressable style={styles.unlinkBtn}>
                         <Text style={styles.btnText}>Hủy liên kết</Text>
                     </Pressable>
                 </View>
             </View>
-            <View>
+            <View style={styles.methodWrapper}>
                 <View style={styles.methodType}>
-                    <Text>VISA</Text>
+                    <Image
+                        style={{marginRight: 16}}
+                        source={require('../../../assets/icons/setting/6_point.png')}
+                    />
+                    <Image
+                        style={{}}
+                        source={require('../../../assets/icons/setting/visa.png')}
+                    />
                 </View>
                 <View style={styles.methodInfoLink}>
-                    <View>
-                        <View>
+                    <View style={{display:'flex', flexDirection: 'column', flex: 1}}>
+                        <View style={styles.inputArea}>
                             <TextInput
                                 style={styles.input}
                                 onChangeText={onChangeNumber}
                                 value={number}
                                 placeholder="0000 0000 0000 0000"
                                 keyboardType="numeric"
+
+                            />
+                            <MaterialCommunityIcons
+                                name='credit-card-scan'
+                                color="#000"
+                                size={20}
+                                style={{position: 'absolute', top: '40%', right: 20}}
                             />
                         </View>
-                        <View>
+                        <View style={styles.inputArea}>
                             <TextInput
                                 style={styles.input}
                                 onChangeText={onChangeNumber}
@@ -73,9 +101,10 @@ export const PaymentScreen = ({navigation}) =>  {
             </View>
         </View>
 
-        <Button
-            title="Lưu"
-        />
+        <Pressable style={styles.saveBtn}>
+            <Text style={{color: '#fff'}}>Lưu</Text>
+        </Pressable>
+        </ScrollView>
       </SafeAreaView>
     );
     // return (
@@ -89,44 +118,67 @@ export const PaymentScreen = ({navigation}) =>  {
 
 const styles = StyleSheet.create({
     title: {
-
+        marginHorizontal: 24,
+        fontSize: 26,
+        paddingBottom: 10,
+        fontWeight: '500',
+      },
+    description: {
+        marginHorizontal: 24,
+        fontSize: 13,
+        paddingBottom: 36,
     },
     tabs: {
         backgroundColor: '#ccc',
     },
-    input: {
+    inputArea: {
+        display: 'flex',
+        flexDirection: 'row',
+        // // width: 314,
+        alignItems: 'stretch',
         flex: 1,
-        backgroundColor: '#ccc',
+    },
+
+    input: {
+        // padding: "14px 20px",
+        paddingHorizontal: 20,
+        height: 60,
+        backgroundColor: "#FAFAFA",
+        borderRadius: 16,
+        marginHorizontal: 8,
+        marginTop: 8,
+        flex: 1,
     },
     Wrapper: {
         marginHorizontal: 24,
-        backgroundColor: '#fff',
+        paddingHorizontal: 10,
+        backgroundColor: '#FAFAFA',
+        borderRadius: 24,
+        marginBottom: 12,
     },
     methodWrapper: {
         // marginHorizontal: 8,
         // backgroundColor: '#ccc',
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        padding: 0,
-
-        width: 362,
-        height: 140,
-
-        /* Background Colors/Background Main */
-
-        backgroundColor: '#FFFFFF',
-        borderRadius: 16,
-
-        /* Inside auto layout */
-
-        order: 0,
-        alignSelf: 'stretch',
-        flexGrow: 0,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-start",
+        padding: 24,
+        flexGrow: 1,
+        borderRadius: 24,
+        backgroundColor: '#fff',
+        marginVertical: 12,
 
     },
     methodType: {
-        marginHorizontal: 16,
+        // marginHorizontal: 16,
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        padding: 0,
+        height: 24,
+        alignSelf: "stretch",
+        flexGrow: 0,
+        marginBottom: 24,
     },
     methodInfoLink: {
         // marginHorizontal: 16,
@@ -135,37 +187,49 @@ const styles = StyleSheet.create({
         // justifyContent: 'space-between',
         // margin: 16,
         display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-start",
-        padding: "0px",
-        width: "116px",
-        height: "44px",
-        order: 0,
+        flexDirection: "row",
+        justifyContent: "space-between",
         alignSelf: "stretch",
-        flexGrow: 0
 
     },
     methodRemainder: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
+        // display: 'flex',
+        // flexDirection: 'column',
+        // justifyContent: 'space-between',
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-start",
+        padding: 0,
+        height: 44,
+        alignSelf: "stretch",
+        flexGrow: 0
     },
     unlinkBtn: {
         display: "flex",
         flexDirection: "row",
-        justifyContent: "center",
         alignItems: "center",
-        padding: "20px 10px",
-        width: "382px",
-        height: "54px",
-        background: "#1A1528",
-        borderRadius: 16,
-        order: 0,
-        alignSelf: "stretch",
+        paddingHorizontal: 24,
+        height: 44,
+        backgroundColor: "#F50000",
+        borderRadius: 12,
         flexGrow: 0
     },
     btnText: {
         color: '#fff',
         fontSize: 14,
-    }
+    },
+
+    saveBtn: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+        paddingHorizontal: 10,
+        height: 54,
+        backgroundColor: "#1A1528",
+        borderRadius: 16,
+        alignSelf: "stretch",
+        flexGrow: 0,
+        marginHorizontal:24,
+    },
 })

@@ -14,30 +14,32 @@ import {
 
 import { Searchbar } from 'react-native-paper';
 import FeatherIcon from 'react-native-vector-icons/Feather';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
 const SECTIONS = [
   {
     header: 'Cài đặt chung',
     items: [
-      { id: 'start_screen', screen:'StartScreen', icon: 'globe', label: 'Màn hình bắt đầu', description:'Chọn màn hình xuất hiện khi mở ứng dụng', type: 'link' },
-      { id: 'fav_address', screen:'FavoriteAddress', icon: 'moon', label: 'Địa chỉ', description:'Lưu địa chỉ quan trọng', type: 'link' },
-      { id: 'payment', screen:'Payment', icon: 'wifi', label: 'Phương thức thanh toán', description:'Cài đặt tùy chọn thanh toán', type: 'link' },
+      { id: 'start_screen', screen:'StartScreen', icon_type: 'Feather',icon: 'smartphone', label: 'Màn hình bắt đầu', description:'Chọn màn hình xuất hiện khi mở ứng dụng', type: 'link' },
+      { id: 'fav_address', screen:'FavoriteAddress', icon_type: 'Feather',icon: 'star', label: 'Địa chỉ', description:'Lưu địa chỉ quan trọng', type: 'link' },
+      { id: 'payment', screen:'Payment', icon_type: 'Feather',icon: 'credit-card', label: 'Phương thức thanh toán', description:'Cài đặt tùy chọn thanh toán', type: 'link' },
     ],
   },
   {
     header: 'Cài đặt dữ liệu',
     items: [
-      { id: 'permission', screen:'Permission', icon: 'flag', label: 'Quyền ứng dụng', description:'Cài đặt quyền ứng dụng có thể truy cập', type: 'link' },
-      { id: 'notify', screen:'', icon: 'mail', label: 'Thông báo lộ trình', description:'Nhận thông báo về thay đổi tuyến đường', type: 'toggle' },
-      { id: 'privacy', screen:'Privacy', icon: 'mail', label: 'Chính sách bảo mật', description:'Quy định về bảo mật thông tin', type: 'link' },
+      { id: 'permission', screen:'Permission', icon_type: 'Feather',icon: 'lock', label: 'Quyền ứng dụng', description:'Cài đặt quyền ứng dụng có thể truy cập', type: 'link' },
+      { id: 'notify', screen:'', icon_type: 'Feather',icon: 'map', label: 'Thông báo lộ trình', description:'Nhận thông báo về thay đổi tuyến đường', type: 'toggle' },
+      { id: 'privacy', screen:'Privacy', icon_type: 'Feather',icon: 'lock', label: 'Chính sách bảo mật', description:'Quy định về bảo mật thông tin', type: 'link' },
     ],
   },
   {
     header: 'Về chúng tôi',
     items: [
-      { id: 'introduction', screen:'Introduction', icon: 'save', label: 'Giới thiệu', description:'Hướng dẫn người dùng mới', type: 'link' },
-      { id: 'app_info', screen:'AppInfomation', icon: 'download', label: 'Thông tin ứng dụng', description:'Chi tiết ứng dụng và giấy phép', type: 'link' },
+      { id: 'news', screen:'News', icon_type: 'MaterialCommunity',icon: 'newspaper-variant-multiple-outline', label: 'Tin tức', description:'Khám phá tin tức về ứng dụng', type: 'link' },
+      { id: 'introduction', screen:'Introduction', icon_type: 'MaterialCommunity',icon: 'file-question-outline', label: 'Giới thiệu', description:'Hướng dẫn người dùng mới', type: 'link' },
+      { id: 'app_info', screen:'AboutApp', icon_type: 'MaterialCommunity',icon: 'information-outline', label: 'Thông tin ứng dụng', description:'Chi tiết ứng dụng và giấy phép', type: 'link' },
     ],
   },
 ];
@@ -101,7 +103,7 @@ export const SettingScreen = ({navigation}) =>  {
               <Text style={styles.sectionHeaderText}>{header}</Text>
             </View>
             <View style={styles.sectionBody}>
-              {items.map(({ id, screen, label, icon, description, type }, index) => {
+              {items.map(({ id, screen, label, icon_type, icon, description, type }, index) => {
                 return (
                   <View
                     key={id}
@@ -113,14 +115,22 @@ export const SettingScreen = ({navigation}) =>  {
                       onPress={() => navigation.navigate(screen) }>
                       <View style={styles.row}>
                         <View style={styles.rowIconWrapper}>
+                          {icon_type === 'Feather' &&
                           <FeatherIcon
                             // color="#616161"
-                            color="#fff"
                             name={icon}
+                            color="#fff"
+                            size={20}
                             style={styles.rowIcon}
                             // size={22}
+                          />}
+                          {icon_type === 'MaterialCommunity' &&
+                          <MaterialCommunityIcons
+                            name={icon}
+                            color="#fff"
                             size={20}
-                          />
+                            style={styles.rowIcon}
+                          />}
                         </View>
 
                         <View style={styles.rowText}>
