@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Image } from "expo-image";
-import { StyleSheet, View, Text, Pressable } from "react-native";
+
+import { StyleSheet, View, Text, Pressable,Image } from "react-native";
 
 const Register2 = () => {
   return (

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Image } from "expo-image";
-import { StyleSheet, View, Text, TextInput, Pressable } from "react-native";
+
+import { StyleSheet, View, Text, TextInput, Pressable ,Image} from "react-native";
 import { Checkbox as RNPCheckbox } from "react-native-paper";
 
 const Login = () => {

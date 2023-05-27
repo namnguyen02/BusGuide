@@ -2,7 +2,7 @@ import { View, Text,StyleSheet ,Image} from 'react-native'
 import React from 'react'
 import Brand from '../../../assets/brand.png'
 
-import { Avatar } from 'react-native-elements';
+import { Avatar, Icon } from 'react-native-elements';
 import {Notification} from '../../../assets/icons/notification.png'
 const Header = () => {
   
@@ -16,7 +16,7 @@ const Header = () => {
         
       </View>
       <View style={styles.notification}>
-        <Image source={Notification} resizeMode='cover' ></Image>
+        <Icon name='home' color={'white'}></Icon>
       </View> 
 
       <View style={styles.avt}>
@@ -37,6 +37,7 @@ const styles=StyleSheet.create({
         width:'100%',
         height:'50%',
         flexDirection:'row',
+        alignItems:'center'
       
     },
     brandBox:{
@@ -44,7 +45,7 @@ const styles=StyleSheet.create({
       
       flex :3,
       marginRight:30,
-      backgroundColor:'white',
+     
       alignItems:'center'
       
     },
@@ -53,7 +54,7 @@ const styles=StyleSheet.create({
     {
       
       flex:1,
-      backgroundColor:'white'
+      
       
     },
     avt:{

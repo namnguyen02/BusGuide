@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Image } from "expo-image";
-import { StyleSheet, View, Text, Pressable, TextInput } from "react-native";
+
+import { StyleSheet, View, Text, Pressable, TextInput,Image } from "react-native";
 import { RootScreens } from "..";
 import { useNavigation } from '@react-navigation/native';
 

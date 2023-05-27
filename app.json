@@ -34,9 +34,9 @@
     },
     "plugins": [],
     "extra": {
-      // "eas": {
-      //   "projectId": "82716b8e-2818-4161-8a88-c571df4369a5"
-      // }
+      "eas": {
+        "projectId": "e3263603-2eab-49bf-bdea-841e02d32733"
+      }
     },
     "runtimeVersion": {
       "policy": "sdkVersion"
