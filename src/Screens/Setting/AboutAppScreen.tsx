@@ -7,11 +7,7 @@ import {
     Text,
     Image,
     TouchableOpacity,
-    Switch,
-    useWindowDimensions,
-    Button,
   } from 'react-native';
-import { TabView, SceneMap } from 'react-native-tab-view';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
 export const AboutAppScreen = ({navigation}) =>  {

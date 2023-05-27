@@ -6,6 +6,8 @@ import { PermissionScreen } from "./PermissionScreen";
 import { NewsScreen } from "./NewsScreen";
 import { AboutAppScreen } from "./AboutAppScreen";
 import { PrivacyScreen } from "./PrivacyScreen";
+import { IntroductionScreen } from "./IntroductionScreen";
+import Header from "@/Components/Header/Header";
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -13,7 +15,11 @@ const Stack = createNativeStackNavigator();
 
 export const SettingStack = () => {
   return (
-      <Stack.Navigator initialRouteName="Setting">
+      <Stack.Navigator initialRouteName="Setting"
+        screenOptions={{
+          headerTitle: () => <Header/>
+        }
+      }>
         <Stack.Screen name="Setting" component={SettingScreen}/>
         <Stack.Screen name="StartScreen" component={StartScreenScreen} />
         <Stack.Screen name="FavoriteAddress" component={FavoriteAddressScreen} />
@@ -22,6 +28,7 @@ export const SettingStack = () => {
         <Stack.Screen name="Privacy" component={PrivacyScreen} />
         <Stack.Screen name="News" component={NewsScreen} />
         <Stack.Screen name="AboutApp" component={AboutAppScreen} />
+        <Stack.Screen name="Introduction" component={IntroductionScreen} />
       </Stack.Navigator>
   );
 };
