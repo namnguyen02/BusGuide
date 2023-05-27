@@ -1,8 +1,8 @@
 import { View, Text ,StyleSheet, TextInput,Keyboard,Image,Dimensions} from 'react-native'
 import React from 'react'
 import { Icon } from 'react-native-elements'
-
-const SearchBox = () => {
+import * as FeatherIcon from 'react-native-feather';
+const SearchBox = ({setModalHistoryVisible}) => {
   
   return (
     
@@ -11,7 +11,7 @@ const SearchBox = () => {
       <View style={styles.box}>
       
         <View style={styles.sectionStyle}>
-        <Icon name='search'color={'white'}/>
+        <Icon name='location-pin' color={'white'}/>
         <TextInput
             style={{flex:1}}
           
@@ -19,26 +19,23 @@ const SearchBox = () => {
             onSubmitEditing={Keyboard.dismiss}
             placeholderTextColor='white'
             cursorColor={'white'}
+            onPressIn={()=>setModalHistoryVisible(true)}
             
           />
-          <Image
-            source={{
-              uri:
-                'https://raw.githubusercontent.com/AboutReact/sampleresource/master/input_username.png',
-            }}
-            style={styles.imageStyle}
-          />
+          <FeatherIcon.X stroke='#fff' width={28} height={28}/>
 
         </View>
             
         <View style={styles.sectionStyle}>
-        <Icon name='location-pin' color={'white'}/>
+        <FeatherIcon.Search stroke='#fff' width={28} height={28}/>
           <TextInput
             style={{flex: 1}}
             placeholder="Bạn muốn đi đâu?"
             underlineColorAndroid="transparent"
             placeholderTextColor={'white'}
+            onPressIn={()=>setModalHistoryVisible(true)}
           />
+          <FeatherIcon.Shuffle stroke='#fff' width={28} height={28}/>
         </View>
         
       </View>
