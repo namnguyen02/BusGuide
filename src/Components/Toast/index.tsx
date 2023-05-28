@@ -1,22 +1,32 @@
 import { View, Text, StyleSheet , Image, Pressable} from 'react-native'
 import React from 'react'
 
-const toastType = [
-    {id: 'ticket', image: {uri: require('../../../assets/toast/ticket-icon.png')}},
-    {id: 'delay', image: {uri: require('../../../assets/toast/delay-icon.png')}},
-    {id: 'cancel', image: {uri: require('../../../assets/toast/cancel-icon.png')}},
-    {id: 'payment', image: {uri: require('../../../assets/toast/payment-icon.png')}},
-
-]
 
 export const Toast = ({type, title, time, description}) => {
+
     return (
         <View style={styles.wrapper}>
             <View style={styles.iconWrapper}>
+                {type=='ticket' &&
                 <Image
                     style={{resizeMode: 'stretch', position:'absolute'}}
-                    source={toastType[type].image.uri}
-                />
+                    source={require('../../../assets/toast/ticket-icon.png')}
+                />}
+                {type=='delay' &&
+                <Image
+                    style={{resizeMode: 'stretch', position:'absolute'}}
+                    source={require('../../../assets/toast/delay-icon.png')}
+                />}
+                {type=='cancel' &&
+                <Image
+                    style={{resizeMode: 'stretch', position:'absolute'}}
+                    source={require('../../../assets/toast/cancel-icon.png')}
+                />}
+                {type=='payment' &&
+                <Image
+                    style={{resizeMode: 'stretch', position:'absolute'}}
+                    source={require('../../../assets/toast/payment-icon.png')}
+                />}
             </View>
             <View style={styles.messageWrapper}>
                 <View style={styles.titleWrapper}>
@@ -41,6 +51,7 @@ const styles = StyleSheet.create({
     wrapper: {
         borderRadius: 16,
         margin: 12,
+        backgroundColor: '#FAFAFA'
     },
     iconWrapper: {
     },

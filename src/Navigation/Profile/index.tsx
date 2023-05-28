@@ -9,13 +9,14 @@ const Stack = createNativeStackNavigator();
 export const ProfileStack = () => {
   return (
       <Stack.Navigator
-      initialRouteName="Profile"
+      initialRouteName="ProfileStack"
+
       screenOptions={({navigation, route}) => ({
-        // headerTitle: () => <HeaderNav  navigation={route.name==='Setting'? false:navigation}/>,
+        headerTitle: () => <HeaderNav navigation={navigation} back={route.name==='Profile'? false:true}/>,
         headerBackVisible: false,
       })}>
         <Stack.Screen name="Profile" component={Profile}/>
-        {/* <Stack.Screen name="Notification" component={Notification}/> */}
+        <Stack.Screen name="Notification" component={Notification}/>
       </Stack.Navigator>
   );
 };

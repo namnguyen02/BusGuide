@@ -23,11 +23,11 @@ export const Profile = () => {
     return (
         <SafeAreaView style={{backgroundColor: '#FFF'}}>
             <ScrollView>
-                <Toast
+                {/* <Toast
                     type='ticket'
                     title='Vé đã mua'
                     time='14.04'
-                    description='Tuyến đường bắt đầu từ trạm Đại học Bách Khoa bị chậm 5 phút.'/>
+                    description='Tuyến đường bắt đầu từ trạm Đại học Bách Khoa bị chậm 5 phút.'/> */}
                 <View style={styles.header}>
                     <View style={styles.imageBorder}>
                         <View style={styles.imageWrapper}>
