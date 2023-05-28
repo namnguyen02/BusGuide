@@ -1,6 +1,6 @@
 import { i18n, LocalizationKey } from "@/Localization";
 import React,{useState,useEffect} from "react";
-import { View, Text, StyleSheet ,Modal,Pressable,Button,BackHandler,Alert,Dimensions, Touchable, TurboModuleRegistry} from "react-native";
+import { View, Text, StyleSheet ,Modal,Pressable,Button,BackHandler,Alert,Dimensions, Touchable, TurboModuleRegistry, Scroll} from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { HStack, Spinner, Heading } from "native-base";
 import { User } from "@/Services";
@@ -48,66 +48,66 @@ export const Home = (props: IHomeProps) => {
 
   if(isMapFull){
       SearchViewHeight=windowHeight*0.14;
-      
+
   };
 
-  
+
   const Main_map=({navigation})=>{
     if(suitableVisible) { navigation.navigate('Main_Suitable')};
     return (
-      
+
           <View style={{height:'100%',width:'100%'}}  >
-            
+
               <Map setIsMapFull={setIsMapFull}></Map>
-            
-            
+
+
              <History setModalVisible={setModalHistoryVisible} ></History>
-            
+
           </View>
-      
-      
-      
+
+
+
     );
-  
-  
+
+
   };
   const Main_Suitable=({navigation})=>{
     setSuitableVisible(false);
     if (isMapFull) {navigation.navigate('Main_map')}
     return (
-      
-  
-          <ModalSuitableCar 
-          setModalSuitableVisible={setSuitableVisible} 
+
+
+          <ModalSuitableCar
+          setModalSuitableVisible={setSuitableVisible}
           setModalCarInformationVisible={setModalCarInformationVisible}>
 
           </ModalSuitableCar>
-          
+
     );
   };
 
 
   return (
-    
-    
+
+
 
 
     <View style={styles.container}>
-      <View style={styles.top}> 
-        
+      <View style={styles.top}>
+
         <View style={styles.space}></View>
         <Header></Header>
-      </View>  
+      </View>
 
       <View style={!isMapFull?styles.searchBoxView1:styles.searchBoxView2}>
-        {isMapFull? 
+        {isMapFull?
         <SearchBoxHomeMin setModalHistoryVisible={setModalHistoryVisible}></SearchBoxHomeMin> :
         <SearchBoxHome setModalHistoryVisible={setModalHistoryVisible}></SearchBoxHome>}
-        
-            
-            
-     </View> 
-      
+
+
+
+     </View>
+
       <View style={!isMapFull?styles.main1:styles.main2}>
           <NavigationContainer independent={true}>
             <Stack.Navigator screenOptions={{headerShown:false}}>
@@ -120,8 +120,8 @@ export const Home = (props: IHomeProps) => {
               <Stack.Screen name="Main_Suitable" component={Main_Suitable} />
             </Stack.Navigator>
           </NavigationContainer>
-      
-      </View> 
+
+      </View>
 
 
  {/* modal tim duong + xem lich su */}
@@ -133,10 +133,10 @@ export const Home = (props: IHomeProps) => {
                             setSuitableVisible={setSuitableVisible}
                             setIsMapFull={setIsMapFull}
               ></ModalHistory>
-        
-      </Modal>   
-      
-     
+
+      </Modal>
+
+
 
 
 {/* modal thong tin cua xe */}
@@ -144,45 +144,45 @@ export const Home = (props: IHomeProps) => {
         transparent={true}
         visible={ModalCarInformationVisible}
         onRequestClose={() => {
-          
+
           setModalCarInformationVisible(false);
         }}>
         <ModalCarInformation setModalTutorVisible={setModalTutorVisible}
                             setModalCarInformationVisible={setModalCarInformationVisible}
                             setIsMapFull={setIsMapFull}
         ></ModalCarInformation>
-      </Modal>  
-      
+      </Modal>
 
-      
+
+
 
 {/* modal xem huong dan di chuyen */}
       <Modal animationType="slide"
         transparent={true}
         visible={modalTutorVisible}
         onRequestClose={() => {
-          
+
           setModalTutorVisible(false);
         }}>
-        <ModalTutor setModalTutorVisible={setModalTutorVisible} 
+        <ModalTutor setModalTutorVisible={setModalTutorVisible}
         setModalHeaderTutorVisible={setModalHeaderTutorVisible}></ModalTutor>
-       </Modal> 
-       
+       </Modal>
+
 {/* modal de keo phan tutot*/}
- 
+
 
     <Modal animationType="slide"
         transparent={true}
         visible={ModalHeaderTutorVisible}
         onRequestClose={() => {
-          
+
           setModalHeaderTutorVisible(false);
           setModalTutorVisible(true);
         }}>
-        <ModalTutorHeader setModalTutorVisible={setModalTutorVisible} 
+        <ModalTutorHeader setModalTutorVisible={setModalTutorVisible}
         setModalHeaderTutorVisible={setModalHeaderTutorVisible} />
-       </Modal> 
-      
+       </Modal>
+
 
        {isLoading ? (
         <HStack space={2} justifyContent="center">
@@ -199,7 +199,7 @@ export const Home = (props: IHomeProps) => {
           </Heading>
         </>
       )}
-      
+
     </View>
   );
 };
@@ -217,15 +217,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    
+
   },
-  
+
   top:{
     backgroundColor:"#FFCE48",
     width:'100%',
     height:'10%',
     alignItems: "center",
-    
+
   }
   ,main1:
   {

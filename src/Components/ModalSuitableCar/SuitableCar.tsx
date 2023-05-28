@@ -1,6 +1,5 @@
 import { View, Text,StyleSheet,ScrollView, Touchable, Pressable ,Image,Dimensions} from 'react-native'
 import React from 'react'
-import Goto from '../../../assets/icons/go_to.png'
 import * as icon from 'react-native-feather'
 import { Icon } from 'react-native-elements';
 type GreetingProps = {
@@ -12,20 +11,20 @@ const windowWidth=Dimensions.get('window').width;
 const SuitableCar = ( {setModalCarInformation}) => {
   return (
     <Pressable style={styles.container}  onPress={()=>setModalCarInformation(true)}>
-      
+
       <View style={styles.context}>
           <View style={styles.name}>
               <Text style={{fontSize:20, fontWeight:'bold'}}>Tuyến số 8 </Text>
-              <Text>52 phút</Text>
+              <Text style={{color: '#9D9D9D', fontSize: 14, fontWeight: '400', marginTop: 4}}>52 phút</Text>
           </View>
-          <View style={styles.posFrom}> 
-              <Text>Từ trạm</Text>
+          <View style={styles.posFrom}>
+              <Text style={{color: '#9D9D9D', fontSize: 14, fontWeight: '400', marginBottom: 6}}>Từ trạm</Text>
               <Text style={{fontWeight:'bold'}}>Đại Học Bách Khoa</Text>
           </View>
       </View>
       <View style={styles.img}>
           <View style={styles.tutor}>
-            <Image source={Goto} resizeMode='contain'></Image>
+            <Image source={require('../../../assets/icons/go_to.png')} style={{width: 180}} resizeMode='stretch'></Image>
           </View>
           <View style={styles.price}>
             <View style={styles.ticket}>
@@ -35,17 +34,17 @@ const SuitableCar = ( {setModalCarInformation}) => {
           <View style={{flex:4}}>
           <Text>7k VNĐ</Text>
           </View>
-              
-            </View> 
-          
-              
-            
+
+            </View>
+
+
+
             </View>
       </View>
-      
+
       </Pressable>
-      
-    
+
+
   )
 }
 const styles=StyleSheet.create({
@@ -55,7 +54,7 @@ const styles=StyleSheet.create({
         borderRadius:10,
         borderWidth:0.5,
         borderColor:'black',
-        
+        padding: 12,
         justifyContent:'center',
         margin:10
     },
@@ -65,7 +64,7 @@ const styles=StyleSheet.create({
       justifyContent:'center',
       flexDirection:'row',
       margin:3,
-    
+
       flex:4
     },
     name:{
@@ -80,17 +79,17 @@ const styles=StyleSheet.create({
       height:'25%',
       margin:5,
       justifyContent:'center',
-     
+      alignItems: 'center',
+
       flex:3
     },
     tutor:{
       flex:3,
-      
     },
     price:{
       flex:2,
-      
-      
+
+
     flexDirection:'row'
     },
     ticket:{
@@ -102,7 +101,7 @@ const styles=StyleSheet.create({
       borderWidth:0.5,
       justifyContent:'center',
       alignItems:'center',flexDirection:'row'
-        
+
 
     }
 })

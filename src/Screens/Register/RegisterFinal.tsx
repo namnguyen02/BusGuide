@@ -3,13 +3,14 @@ import * as React from "react";
 import { StyleSheet, Text, View, Pressable,Image } from "react-native";
 import { RootScreens } from "..";
 import { useNavigation } from '@react-navigation/native';
+import {StackParamList} from '@/Navigation/Register'
 
 
 export const RegisterFinal = (props: {
   onNavigate: (string: RootScreens) => void;
-  
+
 }) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<StackParamList>();
 
   return (
     <View style={styles.registerFinal}>
@@ -18,7 +19,6 @@ export const RegisterFinal = (props: {
           <View style={[styles.logosParent, styles.btUWrapperFlexBox]}>
             <Image
               style={styles.logosIcon}
-              contentFit="cover"
               source={require("../../../assets/images/RegisterFinal/logo.png")}
             />
             <View style={[styles.welcomeParent, styles.welcomeParentFlexBox]}>
@@ -26,14 +26,14 @@ export const RegisterFinal = (props: {
                 Welcome
               </Text>
               <Text style={[styles.chngTiS, styles.welcomeLayout]}>
-                Chúng tôi sẽ đồng hảnh cùng bạn trên mọi tuyến đường, bất kể bạn
+                Chúng tôi sẽ đồng hành cùng bạn trên mọi tuyến đường, bất kể bạn
                 đi đâu
               </Text>
             </View>
           </View>
         </View>
         <View style={[styles.frameContainer, styles.welcomeParentFlexBox]}>
-          <Pressable style={[styles.btUWrapper, styles.btUWrapperFlexBox]} onPress={() => props.onNavigate(RootScreens.MAIN)}>                
+          <Pressable style={[styles.btUWrapper, styles.btUWrapperFlexBox]} onPress={() => props.onNavigate(RootScreens.MAIN)}>
             <Text style={[styles.btU, styles.btUTypo]}>Bắt đầu</Text>
           </Pressable>
         </View>
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 0,
     left: 0,
-    width: 430,
+    right: 0,
     height: 683,
   },
   frameWrapper: {

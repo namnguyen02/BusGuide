@@ -6,29 +6,29 @@ import * as FeatherIcon from 'react-native-feather';
 const SearchBoxHome = ({setModalHistoryVisible}) => {
   return (
     <View style={styles.box}>
-      
+
       <Pressable style={styles.sectionStyle}  onPress={()=>setModalHistoryVisible(true)}>
-        
-            <View style={{flex:1,justifyContent:'center',alignItems:'center'}}> 
-            <FeatherIcon.ArrowDownCircle stroke='#fff' width={24} height={24}/>
+
+            <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+            <FeatherIcon.ArrowDownCircle stroke='#fff' width={20} height={20}/>
             </View>
             <View style={{flex:5,justifyContent:'center'}}>
-                <Text style={{color:'white'}}>268,Lý Thường Kiệt,Quận 10</Text>
+                <Text style={{color:'white'}}>268, Lý Thường Kiệt, Quận 10</Text>
             </View>
-            <FeatherIcon.X stroke='#fff' width={24} height={24}/>
+            <FeatherIcon.X stroke='#fff' width={20} height={20} style={{marginHorizontal: 8}}/>
 
         </Pressable>
-            
+
         <Pressable style={styles.sectionStyle}  onPress={()=>setModalHistoryVisible(true)}>
-                <View style={{flex:1,justifyContent:'center',alignItems:'center'}}> 
-                <FeatherIcon.Search stroke='#fff' width={24} height={24}/>
+                <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+                <FeatherIcon.Search stroke='#fff' width={20} height={20}/>
                 </View>
                 <View style={{flex:5,justifyContent:'center'}}>
                     <Text style={{color:'white'}}>Điểm đến</Text>
                 </View>
-                <FeatherIcon.Shuffle stroke='#fff' width={24} height={24}/>
+                <FeatherIcon.Shuffle stroke='#fff' width={20} height={20} style={{marginHorizontal: 8}}/>
         </Pressable>
-        
+
       </View>
   )
 }
@@ -36,7 +36,7 @@ const windowWidth=Dimensions.get('window').width;
 const windowHeight=Dimensions.get('window').height;
 const styles = StyleSheet.create({
 
-  
+
   box:{
     backgroundColor:"#1A1528",
     width:windowWidth*0.9,
@@ -46,12 +46,12 @@ const styles = StyleSheet.create({
     alignItems:'center',
     margin:10
   },
-  
+
   sectionStyle: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    
+
     borderWidth: 0.5,
     borderColor: 'white',
     height: '25%',
@@ -64,9 +64,9 @@ const styles = StyleSheet.create({
     margin: 5,
     height: 25,
     width: 25,
-    
-    
-    
+
+
+
   },
 
 })

@@ -18,6 +18,15 @@ type RegisterNavigatorProps = NativeStackScreenProps<
   RootStackParamList,
   RootScreens.REGISTER
 >;
+export type StackParamList = {
+  navigate: (screen?: string) => void;
+  goBack: () => void;
+  Register1: undefined;
+  Register2: undefined;
+  Register3: undefined;
+  Register4: undefined;
+  RegisterFinal: undefined;
+};
 const Stack = createNativeStackNavigator();
 // @refresh reset
 
@@ -51,7 +60,7 @@ export const RegisterNavigator = ({
             name="RegisterFinal">
             {(props) => <RegisterFinal onNavigate={onNavigate} />}
         </Stack.Screen>
-      
+
     </Stack.Navigator>
   );
 };

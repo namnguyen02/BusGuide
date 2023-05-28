@@ -3,12 +3,14 @@ import * as React from "react";
 import { StyleSheet, View, Text, Pressable, TextInput,Image } from "react-native";
 import { RootScreens } from "..";
 import { useNavigation } from '@react-navigation/native';
+import {StackParamList} from '@/Navigation/Register'
+
 
 export const Register3 = (props: {
   onNavigate: (string: RootScreens) => void;
 
 }) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<StackParamList>();
 
   return (
     <View style={styles.register2}>
@@ -17,7 +19,6 @@ export const Register3 = (props: {
           <View style={styles.maskGroupParent}>
             <Image
               style={[styles.maskGroupIcon, styles.maskGroupIconPosition]}
-              contentFit="cover"
               source={require("../../../assets/images/Register3/background.png")}
             />
             <View style={[styles.frameContainer, styles.frameSpaceBlock]}>
@@ -39,7 +40,6 @@ export const Register3 = (props: {
           <View style={styles.vectorParent}>
             <Image
               style={styles.vectorIcon}
-              contentFit="cover"
               source={require("../../../assets/images/Register3/vector.png")}
             />
             <View style={[styles.frameView, styles.frameFlexBox]}>
@@ -47,7 +47,6 @@ export const Register3 = (props: {
                 <View>
                   <Image
                     style={styles.momoLogoIcon}
-                    contentFit="cover"
                     source={require("../../../assets/images/Register3/google_wallet.png")}
                   />
                 </View>
@@ -60,7 +59,6 @@ export const Register3 = (props: {
             </View>
             <Image
               style={styles.vectorIcon}
-              contentFit="cover"
               source={require("../../../assets/images/Register3/vector.png")}
             />
             <View style={styles.frameParent1}>
@@ -68,12 +66,10 @@ export const Register3 = (props: {
                 <View style={styles.rectangleParent}>
                   <Image
                     style={styles.groupIcon}
-                    contentFit="cover"
                     source={require("../../../assets/images/Register3/mastercard.png")}
                   />
                   <Image
                     style={styles.visaBrandmarkBlueRgb20211Icon}
-                    contentFit="cover"
                     source={require("../../../assets/images/Register3/visa.png")}
                   />
                 </View>
@@ -108,7 +104,6 @@ export const Register3 = (props: {
             </View>
             <Image
               style={styles.vectorIcon}
-              contentFit="cover"
               source={require("../../../assets/images/Register3/vector.png")}
             />
           </View>
@@ -322,7 +317,7 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   maskGroupParent: {
-    height: 283,
+    height: 240,
     overflow: "hidden",
     alignSelf: "stretch",
   },

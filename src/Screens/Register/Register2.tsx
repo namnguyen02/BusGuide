@@ -1,15 +1,16 @@
 import * as React from "react";
 
-import { StyleSheet, View, Text, Pressable,Image } from "react-native";
+import { StyleSheet, View, Text, Pressable,Image, ScrollView } from "react-native";
 import { RootScreens } from "..";
 import { useNavigation } from '@react-navigation/native';
+import {StackParamList} from '@/Navigation/Register'
 
 
 export const Register2 = (props: {
   onNavigate: (string: RootScreens) => void;
 
 }) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<StackParamList>();
 
   return (
     <View style={styles.register1}>
@@ -17,7 +18,6 @@ export const Register2 = (props: {
         <View style={styles.maskGroupParent}>
           <Image
             style={[styles.maskGroupIcon, styles.groupPosition]}
-            contentFit="cover"
             source={require("../../../assets/images/Register2/background.png")}
           />
           <View style={[styles.frameGroup, styles.frameSpaceBlock]}>
@@ -39,29 +39,29 @@ export const Register2 = (props: {
 
         </View>
         <View style={styles.frameWrapper}>
-          <View style={styles.frameContainer}>
-            <View style={styles.frameView}>
-              <Image
-                style={[styles.frameIcon, styles.iconLayout]}
-                contentFit="cover"
-                source={require("../../../assets/images/Register2/image_picker.png")}
-              />
+          <ScrollView style={styles.frameContainer} showsVerticalScrollIndicator={false}>
+            <View style={{alignItems: 'center'}}>
+              <View style={styles.frameView}>
+                <Image
+                  style={[styles.frameIcon, styles.iconLayout]}
+                  source={require("../../../assets/images/Register2/image_picker.png")}
+                />
+              </View>
+              <View style={styles.frameParent1}>
+                <Pressable style={[styles.iconsWrapper, styles.iconsFlexBox]}>
+                  <View style={[styles.icons, styles.iconsFlexBox]}>
+                    <Image
+                      style={styles.iconLayout}
+                      source={require("../../../assets/images/Register2/camera.png")}
+                    />
+                  </View>
+                </Pressable>
+                <Pressable style={[styles.chnNhWrapper, styles.wrapperBorder]}>
+                  <Text style={[styles.chnNh, styles.bQuaTypo]}>Chọn ảnh</Text>
+                </Pressable>
+              </View>
             </View>
-            <View style={styles.frameParent1}>
-              <Pressable style={[styles.iconsWrapper, styles.iconsFlexBox]}>
-                <View style={[styles.icons, styles.iconsFlexBox]}>
-                  <Image
-                    style={styles.iconLayout}
-                    contentFit="cover"
-                    source={require("../../../assets/images/Register2/camera.png")}
-                  />
-                </View>
-              </Pressable>
-              <Pressable style={[styles.chnNhWrapper, styles.wrapperBorder]}>
-                <Text style={[styles.chnNh, styles.bQuaTypo]}>Chọn ảnh</Text>
-              </Pressable>
-            </View>
-          </View>
+          </ScrollView>
         </View>
         <View style={styles.shadow}>
           <View style={[styles.shadowChild, styles.childPosition]} />
@@ -265,7 +265,7 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   maskGroupParent: {
-    height: 283,
+    height: 240,
     overflow: "hidden",
     alignSelf: "stretch",
   },
@@ -312,7 +312,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   frameContainer: {
-    alignItems: "center",
+    // alignItems: "center",
     alignSelf: "stretch",
   },
   frameWrapper: {

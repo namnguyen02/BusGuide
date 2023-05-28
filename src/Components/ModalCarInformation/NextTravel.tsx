@@ -15,9 +15,9 @@ const NextTravel = ({setModalTutorVisible,
             <Text >10 phút</Text>
       </View>
       <View style={styles.busStop}>
-            <Text >Trạm dừng</Text>
+            <Text  style={{color: '#9D9D9D', fontWeight: '700', fontSize: 14}}>Trạm dừng</Text>
             <Text style={{fontSize:18 ,fontWeight:'bold'}}>Đại học Bách Khoa</Text>
-           
+
       </View>
       <View style={styles.arrow}>
             <Icon name='arrow-right'></Icon>
@@ -43,7 +43,7 @@ const styles=StyleSheet.create({
     },
     busStop:{
         flex:5,
-        
+
             justifyContent:'center'
     },
     arrow:{

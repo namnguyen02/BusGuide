@@ -3,31 +3,31 @@ import React from 'react'
 import { Icon } from 'react-native-elements'
 import * as FeatherIcon from 'react-native-feather';
 const SearchBox = ({setModalHistoryVisible}) => {
-  
-  return (
-    
 
-    
+  return (
+
+
+
       <View style={styles.box}>
-      
+
         <View style={styles.sectionStyle}>
-        <Icon name='location-pin' color={'white'} style={{width:28,height:28}}/>
+        <Icon name='location-pin' color={'white'} size={20} style={{marginHorizontal: 12}}/>
         <TextInput
             style={{flex:1}}
-          
+
             placeholder="Vị trí của bạn"
             onSubmitEditing={Keyboard.dismiss}
             placeholderTextColor='white'
             cursorColor={'white'}
             onPressIn={()=>setModalHistoryVisible(true)}
-            
+
           />
-          <FeatherIcon.X stroke='#fff' width={28} height={28}/>
+          <FeatherIcon.X stroke='#fff' width={20} height={20} style={{marginHorizontal: 12}}/>
 
         </View>
-            
+
         <View style={styles.sectionStyle}>
-        <FeatherIcon.Search stroke='#fff' width={28} height={28}/>
+        <FeatherIcon.Search stroke='#fff' width={20} height={20} style={{marginHorizontal: 12}}/>
           <TextInput
             style={{flex: 1}}
             placeholder="Bạn muốn đi đâu?"
@@ -35,19 +35,19 @@ const SearchBox = ({setModalHistoryVisible}) => {
             placeholderTextColor={'white'}
             onPressIn={()=>setModalHistoryVisible(true)}
           />
-          <FeatherIcon.Shuffle stroke='#fff' width={28} height={28}/>
+          <FeatherIcon.Shuffle stroke='#fff' width={20} height={20} style={{marginHorizontal: 12}}/>
         </View>
-        
+
       </View>
-    
-    
+
+
   )
 }
 const windowWidth=Dimensions.get('window').width;
 const windowHeight=Dimensions.get('window').height;
 const styles = StyleSheet.create({
 
-  
+
   box:{
     backgroundColor:"#1A1528",
     width:windowWidth*0.9,
@@ -57,12 +57,12 @@ const styles = StyleSheet.create({
     alignItems:'center',
     margin:10
   },
-  
+
   sectionStyle: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    
+
     borderWidth: 0.5,
     borderColor: 'white',
     height: '25%',
@@ -75,9 +75,9 @@ const styles = StyleSheet.create({
     margin: 5,
     height: 25,
     width: 25,
-    
-    
-    
+
+
+
   },
 
 })

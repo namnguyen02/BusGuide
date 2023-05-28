@@ -10,27 +10,37 @@ const Position = ({Img,setModalVisible,setSuitableVisible,setIsMapFull}) => {
     console.log('nhan');
     }} style={styles.container}>
       <View style={styles.positionImg}>
-        <Image source={Img}/> 
+        <Image source={Img}/>
       </View>
       <View style={styles.positionContext}>
-            <Text style={{fontSize:17, fontWeight:'bold'}}> 268 Tạ Quang Bửu,Q.10</Text>
+            <Text style={{fontSize:17, fontWeight:'bold'}}> 268 Tạ Quang Bửu, Q.10</Text>
             <View style={{flexDirection:'row'}}>
                 <icon.CornerDownRight height={15} width={15} color={'black'}></icon.CornerDownRight>
-                <Text>Tạ Quang Bửu,Thủ Đức</Text>
+                <Text>Tạ Quang Bửu, Thủ Đức</Text>
             </View>
-            
+
       </View>
     </Pressable>
   )
 }
 const styles=StyleSheet.create({
     container:{
-        width:'90%',height:60 ,flexDirection:'row', 
-        borderRadius:20,
-        borderColor:'black',
-        borderWidth:1,
-        margin:10
-        
+        width:'90%',height:60 ,flexDirection:'row',
+        borderRadius:16,
+        // borderColor:'black',
+        // borderWidth:1,
+        margin:10,
+
+        backgroundColor: '#fff',
+        shadowColor: "#000",
+        shadowOffset:{
+        width: 0,
+        height: 1,
+        },
+        shadowOpacity: 0.20,
+        shadowRadius: 1.41,
+        elevation: 2,
+
     },
     positionImg:{
         flex:1,
@@ -39,6 +49,10 @@ const styles=StyleSheet.create({
     },
     positionContext:{
         flex:5,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        paddingVertical: 6
     }
 })
 export default Position

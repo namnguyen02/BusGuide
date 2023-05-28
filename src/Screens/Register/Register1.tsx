@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 
-import { StyleSheet, View, Text, Pressable ,Image} from "react-native";
+import { StyleSheet, View, Text, Pressable ,Image, ScrollView} from "react-native";
 import {
   TextInput as RNPTextInput,
   Checkbox as RNPCheckbox,
 } from "react-native-paper";
 import { useNavigation } from '@react-navigation/native';
 import { RootScreens } from "..";
+import {StackParamList} from '@/Navigation/Register'
 
 
 export const Register1 = (props: {
@@ -14,7 +15,7 @@ export const Register1 = (props: {
 
 }) => {
   const [checkboxchecked, setCheckboxchecked] = useState(true);
-  const navigation = useNavigation();
+  const navigation = useNavigation<StackParamList>();
 
   return (
     <View style={styles.register1}>
@@ -43,7 +44,7 @@ export const Register1 = (props: {
 
         </View>
         <View style={styles.frameWrapper}>
-          <View style={styles.frameContainer}>
+          <ScrollView style={styles.frameContainer} showsVerticalScrollIndicator={false}>
             <View style={styles.frameContainer}>
               <View style={styles.frameContainer}>
                 <Text style={[styles.tnNgNhp, styles.mtKhuTypo]}>
@@ -103,7 +104,7 @@ export const Register1 = (props: {
                 </Text>
               </View>
             </View>
-          </View>
+          </ScrollView>
         </View>
         <View style={styles.shadow}>
           <View style={[styles.shadowChild, styles.childPosition]} />
@@ -263,7 +264,7 @@ const styles = StyleSheet.create({
     width: 430,
   },
   maskGroupParent: {
-    height: 283,
+    height: 240,
     overflow: "hidden",
     alignSelf: "stretch",
   },

@@ -10,50 +10,50 @@ const countries = [
   'Vé thường',
   'Vé sinh viên',
   'Vé trẻ em',
-  
- 
+
+
 ];
 
 
 const ModalTutor= ({setModalTutorVisible,setModalHeaderTutorVisible}) => {
   return (
     <View style={styles.constainer}>
-    <ChevronDown color={'black'} width={windowWidth*0.13} height={windowWidth*0.13} 
+    <ChevronDown color={'black'} width={windowWidth*0.13} height={windowWidth*0.13}
           onPress={()=>{setModalTutorVisible(false); setModalHeaderTutorVisible(true)}}
 
   />
-    <Text style={{fontSize:18, fontWeight:'bold'}}> Chi tiết chuyến đi</Text>
-    <ScrollView  contentContainerStyle={{  alignItems:'center' }}>  
+    <Text style={{fontSize:18, fontWeight:'bold', marginVertical: 12}}> Chi tiết chuyến đi</Text>
+    <ScrollView  contentContainerStyle={{  alignItems:'center' }} showsVerticalScrollIndicator={false}>
       <View style={styles.title}>
             <View style={{flex:3, justifyContent:'flex-start',alignItems:'center'}}>
                 <Text style={{fontSize:40, fontWeight:'bold'}}>14:05</Text>
             </View>
             <View style={{flex:4, justifyContent:'flex-end'}}>
-                <Text>52 phút</Text>
+                <Text style={{color: '#9D9D9D', fontWeight: '700', fontSize: 14}}>52 phút</Text>
             </View>
-            <View style={{flex:1, justifyContent:'center'}}>
-                  <icon.Bell stroke='black' height={28} width={28}/>
+            <View style={{flex:1, justifyContent:'center', borderRadius: 12, backgroundColor: '#FF8811', alignItems: 'center'}}>
+                  <icon.Bell stroke='black' height={20} width={20}/>
             </View>
-        
-          
-          
-          
+
+
+
+
       </View>
-      <View style={styles.re_des} >  
-          <View style={{flex:5,justifyContent:'flex-end'}}> 
-              <Text>Q.10</Text>
-              <Text style={{fontWeight:'bold'}}> 268 Lý Thường Kiệt</Text>
+      <View style={styles.re_des} >
+          <View style={{flex:5,justifyContent:'flex-end'}}>
+              <Text style={{color: '#9D9D9D', fontWeight: '700', fontSize: 14}}>Q.10</Text>
+              <Text style={{fontWeight:'bold', marginTop: 6}}>268 Lý Thường Kiệt</Text>
           </View>
           <View style={{flex:1,justifyContent:'flex-end', alignItems:'center'}}>
                 <Text>đến</Text>
           </View>
           <View style={{flex:5,justifyContent:'flex-end',alignItems:'flex-end'}}>
-              <Text>Tp.Thủ Đức</Text>
-              <Text style={{fontWeight:'bold'}}> Tạ Quang Bửu</Text>
+              <Text style={{color: '#9D9D9D', fontWeight: '700', fontSize: 14}}>Tp.Thủ Đức</Text>
+              <Text style={{fontWeight:'bold', marginTop: 6}}> Tạ Quang Bửu</Text>
           </View>
       </View>
       <View style={styles.ticket_view}>
-      
+
 
           <View style={{flex:5,alignItems:'flex-start'}}>
           <SelectDropdown
@@ -70,7 +70,7 @@ const ModalTutor= ({setModalTutorVisible,setModalHeaderTutorVisible}) => {
               rowTextForSelection={(item, index) => {
                 return item;
               }}
-              
+
               buttonStyle={styles.dropdown1BtnStyle}
               buttonTextStyle={styles.dropdown1BtnTxtStyle}
               renderDropdownIcon={isOpened => {
@@ -84,29 +84,29 @@ const ModalTutor= ({setModalTutorVisible,setModalHeaderTutorVisible}) => {
 
           </View>
 
-          
+
           <View style={{flex:5,alignItems:'flex-end'}}>
                   <Pressable style={{
                             borderRadius:10,
                             height:windowHeight*0.05,
                             width:windowWidth*0.2,
                             borderColor:'black',
-                            backgroundColor:'yellow',
+                            backgroundColor:'black',
                             borderWidth:0.5,
                             alignItems:'center',
                             justifyContent:'center'
-                            
+
                       }} >
-                            <Text>Mua vé</Text>
+                            <Text style={{color: '#fff'}}>Mua vé</Text>
                       </Pressable>
           </View>
-              
-            
-         
+
+
+
       </View>
       <View style={styles.khoi_hanh}>
-            <icon.Map stroke='black' height={28} width={28}  />
-            <Text>Khởi hành</Text>
+            <icon.Map stroke='black' height={20} width={20} style={{marginHorizontal: 8}} />
+            <Text style={{color: '#9D9D9D', fontWeight: '700', fontSize: 14}}>Khởi hành</Text>
       </View>
       <Step location={'268 Lý Thường Kiệt'} icon_name={'Map-pin'} action={'Vị trí của tôi'} time={'14:05'}></Step>
       <Step location={'Khoảng 1 phút'} icon_name={'User'} action={'Đi bộ 50m'} time={''}></Step>
@@ -115,9 +115,9 @@ const ModalTutor= ({setModalTutorVisible,setModalHeaderTutorVisible}) => {
       <Step location={'Khoảng 6 phút'} icon_name={'User'} action={'Đi bộ 300m'} time={''}></Step>
       <Step location={'Tạ Quang Bửu,TP.Thủ Đức'} icon_name={'Target'} action={'KTX Khu A ĐHQG'} time={'14:57'}></Step>
     </ScrollView>
-    
-    
-    
+
+
+
   </View>
   )
 }
@@ -132,22 +132,22 @@ const styles=StyleSheet.create({
       borderTopEndRadius:30,
       borderTopLeftRadius:30,
       alignItems:'center',
-      
+
 
   },
   title:{
     height:windowHeight*0.07,
     flexDirection:'row',
-    
+    paddingVertical:4,
     width:windowWidth*0.9,
-    
-   
+
+
 
   },
   re_des:{
     height:windowHeight*0.1,
     flexDirection:'row',
-    
+    marginBottom: 24,
     width:windowWidth*0.9
 
   },
@@ -163,12 +163,12 @@ const styles=StyleSheet.create({
     height:windowHeight*0.05,
   }
   ,
-  
+
   tutor:{
-    
+
 
   },
- 
+
 
 
 
@@ -211,8 +211,8 @@ const styles=StyleSheet.create({
   dropdown1RowStyle: {backgroundColor: '#EFEFEF', borderBottomColor: '#C5C5C5'},
   dropdown1RowTxtStyle: {color: '#444', textAlign: 'left'},
 
-  
-  
+
+
 
 })
 

@@ -7,22 +7,22 @@ import { Icon } from 'react-native-elements';
 const SearchBoxHomeMin = ({setModalHistoryVisible}) => {
   return (
     <View style={styles.box}>
-      
+
         <Pressable style={styles.sectionStyle}  onPress={()=>setModalHistoryVisible(true)}>
-          <View style={{flex:1,justifyContent:'center'}}> 
-          <Icon name='location-pin' color={'white'}/>
+          <View style={{flex:1,justifyContent:'center'}}>
+          <Icon name='location-pin' size={20} color={'white'}/>
           </View>
           <View style={{flex:5,justifyContent:'center'}}>
             <Text style={{color:'white'}}>Điểm đến?</Text>
           </View>
-          <View style={{flex:1,justifyContent:'center'}}> 
-          
+          <View style={{flex:1,justifyContent:'center'}}>
+
           </View>
-          <FeatherIcon.Shuffle stroke='#fff' width={28} height={28}/>
+          <FeatherIcon.Shuffle stroke='#fff' width={20} height={20} style={{marginHorizontal: 8}}/>
         </Pressable>
-            
-        
-        
+
+
+
       </View>
   )
 }
@@ -30,7 +30,7 @@ const windowWidth=Dimensions.get('window').width;
 const windowHeight=Dimensions.get('window').height;
 const styles = StyleSheet.create({
 
-  
+
   box:{
     backgroundColor:"#1A1528",
     width:windowWidth*0.9,
@@ -40,12 +40,12 @@ const styles = StyleSheet.create({
     alignItems:'center',
     margin:10
   },
-  
+
   sectionStyle: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    
+
     borderWidth: 0.5,
     borderColor: 'white',
     height: '55%',
@@ -58,9 +58,9 @@ const styles = StyleSheet.create({
     margin: 5,
     height: 25,
     width: 25,
-    
-    
-    
+
+
+
   },
 
 })

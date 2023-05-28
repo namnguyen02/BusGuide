@@ -3,13 +3,14 @@ import * as React from "react";
 import { StyleSheet, View, Text, TextInput, Pressable ,Image} from "react-native";
 import { RootScreens } from "..";
 import { useNavigation } from '@react-navigation/native';
+import {StackParamList} from '@/Navigation/Register'
 
 
 export const Register4 = (props: {
   onNavigate: (string: RootScreens) => void;
 
 }) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<StackParamList>();
 
   return (
     <View style={styles.register3}>
@@ -18,7 +19,6 @@ export const Register4 = (props: {
           <View style={styles.maskGroupParent}>
             <Image
               style={[styles.maskGroupIcon, styles.groupPosition]}
-              contentFit="cover"
               source={require("../../../assets/images/Register4/background.png")}
             />
             <View style={[styles.frameGroup, styles.frameSpaceBlock]}>
@@ -269,7 +269,7 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   maskGroupParent: {
-    height: 283,
+    height: 240,
     overflow: "hidden",
     alignSelf: "stretch",
   },
