@@ -15,14 +15,12 @@ export const ForgotPasswordPhoneNumber = (props: {
         <View style={styles.maskGroupParent}>
           <Image
             style={[styles.maskGroupIcon, styles.groupPosition]}
-            contentFit="cover"
             source={require("../../../assets/images/ForgotPasswordPhoneNumber/background.png")}
           />
           <View style={[styles.frameGroup, styles.frameSpaceBlock]}>
             <View style={[styles.logosWrapper, styles.frameChildFlexBox]}>
               <Image
                 style={styles.logosIcon}
-                contentFit="cover"
                 source={require("../../../assets/images/ForgotPasswordPhoneNumber/logo.png")}
               />
             </View>
@@ -69,7 +67,7 @@ export const ForgotPasswordPhoneNumber = (props: {
           <View style={styles.shadowChild} />
         </View>
         <View style={[styles.frameWrapper, styles.frameSpaceBlock]}>
-          <Pressable style={[styles.giMBoMtWrapper, styles.frameItemFlexBox]} 
+          <Pressable style={[styles.giMBoMtWrapper, styles.frameItemFlexBox]}
           onPress={() => navigation.navigate('ForgotPasswordSecurityCode')}
           >
             <Text style={styles.giMBo}>Gửi mã bảo mật</Text>

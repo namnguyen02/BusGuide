@@ -16,11 +16,11 @@ import {
 import {Picker} from '@react-native-picker/picker';
 
 const NEWS = [
-    {id: 0, date: new Date(2023-4-10), image: 'https://static01.nyt.com/images/2021/12/27/books/books-winner-promo/books-winner-promo-videoSixteenByNineJumbo1600.jpg', title: 'BusGuide với giao diện mới và tốc độ được cải thiện',},
-    {id: 1, date: new Date(2023-4-11), image: 'https://static01.nyt.com/images/2021/12/27/books/books-winner-promo/books-winner-promo-videoSixteenByNineJumbo1600.jpg', title: 'Google Wallet hiện là tùy chọn thanh toán trực tiếp trong ứng dụng',},
-    {id: 2, date: new Date(2023-4-12), image: 'https://static01.nyt.com/images/2021/12/27/books/books-winner-promo/books-winner-promo-videoSixteenByNineJumbo1600.jpg', title: 'Check in/out bằng điện thoại di động trên các chuyến đi',},
-    {id: 3, date: new Date(2023-4-13), image: 'https://static01.nyt.com/images/2021/12/27/books/books-winner-promo/books-winner-promo-videoSixteenByNineJumbo1600.jpg', title: 'BusGuide với giao diện mới và tốc độ được cải thiện',},
-    {id: 4, date: new Date(2023-4-14), image: 'https://static01.nyt.com/images/2021/12/27/books/books-winner-promo/books-winner-promo-videoSixteenByNineJumbo1600.jpg', title: 'BusGuide với giao diện mới và tốc độ được cải thiện',},
+    {id: 0, date: new Date(2023-4-10), image: {name: "1", uri: require('../../../assets/news/1.png')}, title: 'BusGuide với giao diện mới và tốc độ được cải thiện',},
+    {id: 1, date: new Date(2023-4-11), image: {name: "2", uri: require('../../../assets/news/2.png')}, title: 'Google Wallet hiện là tùy chọn thanh toán trực tiếp trong ứng dụng',},
+    {id: 2, date: new Date(2023-4-12), image: {name: "3", uri: require('../../../assets/news/3.png')}, title: 'Check in/out bằng điện thoại di động trên các chuyến đi',},
+    {id: 3, date: new Date(2023-4-13), image: {name: "4", uri: require('../../../assets/news/1.png')}, title: 'BusGuide với giao diện mới và tốc độ được cải thiện',},
+    {id: 4, date: new Date(2023-4-14), image: {name: "5", uri: require('../../../assets/news/1.png')}, title: 'BusGuide với giao diện mới và tốc độ được cải thiện',},
 ]
 
 export const NewsScreen = ({navigation}) =>  {
@@ -71,9 +71,7 @@ export const NewsScreen = ({navigation}) =>  {
                             /> */}
                             <Image
                                 style={styles.newImage}
-                                source={{
-                                uri: 'https://reactnative.dev/img/tiny_logo.png',
-                                }}
+                                source={image.uri}
                             />
                             <View style={styles.newInfo}>
                                 <Text
@@ -158,6 +156,8 @@ const styles = StyleSheet.create({
         top: 0,
         bottom: "40%",
         borderRadius: 24,
+        resizeMode: 'stretch',
+        width: '100%'
 
     },
     newInfo: {

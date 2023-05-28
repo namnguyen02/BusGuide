@@ -16,14 +16,12 @@ export const ForgotPasswordSecurityCode = (props: {
           <View style={styles.maskGroupParent}>
             <Image
               style={[styles.maskGroupIcon, styles.maskGroupIconPosition]}
-              contentFit="cover"
               source={require("../../../assets/images/ForgotPasswordSecurityCode/background.png")}
             />
             <View style={[styles.frameContainer, styles.frameSpaceBlock]}>
               <View style={styles.logosWrapper}>
                 <Image
                   style={styles.logosIcon}
-                  contentFit="cover"
                   source={require("../../../assets/images/ForgotPasswordSecurityCode/logo.png")}
                 />
               </View>

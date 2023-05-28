@@ -7,7 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 
 export const Register4 = (props: {
   onNavigate: (string: RootScreens) => void;
-  
+
 }) => {
   const navigation = useNavigation();
 
@@ -38,7 +38,7 @@ export const Register4 = (props: {
                 </Text>
               </View>
             </View>
-           
+
           </View>
           <View style={[styles.frameContainer, styles.frameSpaceBlock]}>
             <View style={styles.frameView}>
@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
   frameGroup: {
     paddingTop: 96,
     alignItems: "center",
-    width: 430,
+    // width: 430,
     left: 0,
     top: 0,
     position: "absolute",

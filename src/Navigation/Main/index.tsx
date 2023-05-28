@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { HomeContainer } from "@/Screens/Home";
 import { SettingStack } from "@/Screens/Setting";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { ProfileStack } from "@/Navigation/Profile";
 const Tab = createBottomTabNavigator();
 
 // @refresh reset
@@ -15,9 +16,9 @@ export const MainNavigator = () => {
         name="Home"
         component={HomeContainer}
         options={{
-          
+
             headerShown: false,
-          
+
           tabBarLabel: 'Tra cứu',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="map-outline" color={color} size={size} />
@@ -37,12 +38,12 @@ export const MainNavigator = () => {
       />
       <Tab.Screen
         name="Trang của tôi"
-        component={HomeContainer}
+        component={ProfileStack}
         options={{
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="account" color={color} size={size} />
           ),
-
+          headerShown: false
         }}
       />
       <Tab.Screen
@@ -52,7 +53,7 @@ export const MainNavigator = () => {
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="cog-outline" color={color} size={size} />
           ),
-
+            headerShown: false
         }}
       />
     </Tab.Navigator>
