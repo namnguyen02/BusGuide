@@ -51,7 +51,8 @@ const style=StyleSheet.create({
 
   },
   context:{
-    flex:5,
+    
+    width:'90%'
     
   },
   bigContext:{
@@ -60,7 +61,8 @@ const style=StyleSheet.create({
   },
   smallContext:{
     flex:1,
-    backgroundColor:'white'
+    backgroundColor:'white',
+    
   },
   button:{
     flex:1,
