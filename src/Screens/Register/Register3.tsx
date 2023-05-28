@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 
 export const Register3 = (props: {
   onNavigate: (string: RootScreens) => void;
-  
+
 }) => {
   const navigation = useNavigation();
 
@@ -34,7 +34,7 @@ export const Register3 = (props: {
                 </Text>
               </View>
             </View>
-           
+
           </View>
           <View style={styles.vectorParent}>
             <Image
@@ -248,7 +248,7 @@ const styles = StyleSheet.create({
   frameContainer: {
     paddingTop: 96,
     alignItems: "center",
-    width: 430,
+    // width: 430,
     left: 0,
     top: 0,
     position: "absolute",

@@ -11,7 +11,7 @@ import { useNavigation } from '@react-navigation/native';
 
 export const Login = (props: {
   onNavigate: (string: RootScreens) => void;
-  
+
 }) => {
   const [checkboxchecked, setCheckboxchecked] = useState(true);
   const navigation = useNavigation();
@@ -25,14 +25,12 @@ export const Login = (props: {
           <View style={styles.maskGroupParent}>
             <Image
               style={[styles.maskGroupIcon, styles.groupPosition]}
-              contentFit="cover"
               source={require("../../../assets/images/Login/background.png")}
             />
             <View style={[styles.frameGroup, styles.frameSpaceBlock]}>
               <View style={[styles.logosWrapper, styles.iconsFlexBox]}>
                 <Image
                   style={styles.logosIcon}
-                  contentFit="cover"
                   source={require("../../../assets/images/Login/logo.png")}
                 />
               </View>
@@ -60,19 +58,17 @@ export const Login = (props: {
                       <View style={[styles.icons, styles.iconsFlexBox]}>
                         <Image
                           style={[styles.userIcon, styles.userIconLayout]}
-                          contentFit="cover"
                           source={require("../../../assets/images/Login/username.png")}
                         />
                       </View>
                     </View>
                     <Image
                       style={[styles.frameChild, styles.userIconLayout]}
-                      contentFit="cover"
                       source={require("../../../assets/images/Login/vector1.png")}
                     />
                     <TextInput
-                      style={styles.frameItem}
-                      placeholder="Placeholder text"
+                      style={[styles.frameItem, styles.frameTextinput]}
+                      placeholder="Tên đăng nhập"
                       keyboardType="default"
                     />
                   </View>
@@ -85,19 +81,17 @@ export const Login = (props: {
                         <View style={[styles.icons, styles.iconsFlexBox]}>
                           <Image
                             style={[styles.userIcon, styles.userIconLayout]}
-                            contentFit="cover"
                             source={require("../../../assets/images/Login/password.png")}
                           />
                         </View>
                       </View>
                       <Image
                         style={[styles.frameChild, styles.userIconLayout]}
-                        contentFit="cover"
                         source={require("../../../assets/images/Login/vector1.png")}
                       />
                       <TextInput
                         style={[styles.frameTextinput, styles.frameFlexBox]}
-                        placeholder="Placeholder text"
+                        placeholder="Mật khẩu"
                         keyboardType="default"
                       />
                     </View>
@@ -138,7 +132,6 @@ export const Login = (props: {
               <View style={styles.vectorParent}>
                 <Image
                   style={styles.vectorIconLayout}
-                  contentFit="cover"
                   source={require("../../../assets/images/Login/vector2.png")}
                 />
                 <Text style={[styles.hocNgNhp, styles.nhpTypo]}>
@@ -146,7 +139,6 @@ export const Login = (props: {
                 </Text>
                 <Image
                   style={[styles.frameChild1, styles.vectorIconLayout]}
-                  contentFit="cover"
                   source={require("../../../assets/images/Login/vector2.png")}
                 />
               </View>
@@ -155,7 +147,6 @@ export const Login = (props: {
               >
                 <Image
                   style={styles.googleIcon}
-                  contentFit="cover"
                   source={require("../../../assets/images/Login/google.png")}
                 />
                 <Text style={[styles.google, styles.ngNhpTypo]}>Google</Text>
@@ -265,7 +256,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   frameGroup: {
-    width: 430,
+    // width: 430,
     paddingTop: 96,
     left: 0,
     top: 0,

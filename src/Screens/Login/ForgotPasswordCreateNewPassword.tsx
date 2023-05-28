@@ -16,14 +16,12 @@ export const ForgotPasswordCreateNewPassword = (props: {
           <View style={styles.maskGroupParent}>
             <Image
               style={[styles.maskGroupIcon, styles.maskGroupIconPosition]}
-              contentFit="cover"
               source={require("../../../assets/images/ForgotPasswordCreateNewPassword/background.png")}
             />
             <View style={[styles.frameContainer, styles.frameSpaceBlock]}>
               <View style={[styles.logosWrapper, styles.iconsWrapperFlexBox]}>
                 <Image
                   style={styles.logosIcon}
-                  contentFit="cover"
                   source={require("../../../assets/images/ForgotPasswordCreateNewPassword/logo.png")}
                 />
               </View>
@@ -61,14 +59,12 @@ export const ForgotPasswordCreateNewPassword = (props: {
                           >
                             <Image
                               style={[styles.lockIcon, styles.lockIconLayout]}
-                              contentFit="cover"
                               source={require("../../../assets/images/ForgotPasswordCreateNewPassword/lock.png")}
                             />
                           </View>
                         </View>
                         <Image
                           style={[styles.frameChild, styles.lockIconLayout]}
-                          contentFit="cover"
                           source={require("../../../assets/images/ForgotPasswordCreateNewPassword/vector.png")}
                         />
                         <TextInput
@@ -106,14 +102,12 @@ export const ForgotPasswordCreateNewPassword = (props: {
                           >
                             <Image
                               style={[styles.lockIcon, styles.lockIconLayout]}
-                              contentFit="cover"
                               source={require("../../../assets/images/ForgotPasswordCreateNewPassword/lock.png")}
                             />
                           </View>
                         </View>
                         <Image
                           style={[styles.frameChild, styles.lockIconLayout]}
-                          contentFit="cover"
                           source={require("../../../assets/images/ForgotPasswordCreateNewPassword/vector.png")}
                         />
                         <TextInput

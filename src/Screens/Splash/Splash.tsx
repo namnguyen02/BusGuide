@@ -9,12 +9,11 @@ export const SplashScreen = (props: {
   onNavigate: (string: RootScreens) => void;
 }) => {
   return (
-    <View style={[styles.welcomeScreen, styles.dk011ParentBg]}>
+    <View style={[styles.welcomeScreen, styles.dk011ParentBg,]}>
       <View style={styles.welcomeScreenInner}>
         <View style={[styles.dk011Parent, styles.dk011ParentBg]}>
           <Image
             style={styles.dk011Icon}
-            contentFit="cover"
             source={require("../../../assets/images/Splash/background.png")}
           />
           <View style={[styles.frameParent, styles.framePosition]}>
@@ -23,7 +22,6 @@ export const SplashScreen = (props: {
                 <View style={[styles.logosParent, styles.frameGroupSpaceBlock]}>
                   <Image
                     style={styles.logosIcon}
-                    contentFit="cover"
                     source={require("../../../assets/images/Splash/logo.png")}
                   />
                   <View style={styles.frameWrapper1FlexBox}>
@@ -44,27 +42,27 @@ export const SplashScreen = (props: {
                   <View style={[styles.ngNhpWrapper, styles.wrapperFlexBox]}>
                     <Text style={[styles.ngNhp, styles.bQuaTypo]}>Đăng nhập</Text>
                   </View>
-                </Pressable> 
+                </Pressable>
                 <Pressable onPress={() => props.onNavigate(RootScreens.REGISTER)}>
- 
+
                   <View style={[styles.toTiKhonWrapper, styles.wrapperFlexBox]}>
                     <Text style={[styles.toTiKhon, styles.bQuaTypo]}>
                       Tạo tài khoản
                     </Text>
                   </View>
-                </Pressable>  
+                </Pressable>
               </View>
               <View style={[styles.frameWrapper1, styles.frameWrapper1FlexBox]}>
                 <View style={styles.bQuaWrapper}>
                   <Pressable onPress={() => props.onNavigate(RootScreens.MAIN)}>
                     <Text style={[styles.bQua, styles.bQuaTypo]}>Bỏ qua</Text>
-                  
+
                   </Pressable>
                 </View>
               </View>
             </View>
           </View>
-          
+
         </View>
       </View>
     </View>
@@ -77,14 +75,15 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   framePosition: {
-    width: 430,
+    // width: 430,
+    width: '100%',
     left: 0,
     top: 0,
     position: "absolute",
   },
   frameGroupSpaceBlock: {
     paddingHorizontal: 24,
-    
+
     alignSelf: "stretch",
   },
   btKBnFlexBox: {
@@ -120,11 +119,11 @@ const styles = StyleSheet.create({
     borderRadius: 9999,
   },
   dk011Icon: {
-    width: 505,
-    height: 622,
+
     left: 0,
     top: 0,
     position: "absolute",
+    resizeMode: 'stretch'
   },
   logosIcon: {
     width: 184,
@@ -141,7 +140,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     letterSpacing: 0.2,
     lineHeight: 27,
-    width: 382,
+    // width: 382,
     marginTop: 16,
   },
   logosParent: {
@@ -235,12 +234,12 @@ const styles = StyleSheet.create({
     top: 0,
     position: "absolute",
   },
-  
+
   parent: {
     height: 37,
     flex: 1,
   },
- 
+
   dk011Parent: {
     overflow: "hidden",
     alignSelf: "stretch",

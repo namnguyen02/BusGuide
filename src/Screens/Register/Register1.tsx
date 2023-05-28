@@ -11,7 +11,7 @@ import { RootScreens } from "..";
 
 export const Register1 = (props: {
   onNavigate: (string: RootScreens) => void;
-  
+
 }) => {
   const [checkboxchecked, setCheckboxchecked] = useState(true);
   const navigation = useNavigation();
@@ -22,7 +22,6 @@ export const Register1 = (props: {
         <View style={styles.maskGroupParent}>
           <Image
             style={[styles.maskGroupIcon, styles.groupPosition]}
-            contentFit="cover"
             source={require("../../../assets/images/Register1/background.png")}
           />
           <View style={[styles.frameGroup, styles.frameSpaceBlock]}>
@@ -41,7 +40,7 @@ export const Register1 = (props: {
               </Text>
             </View>
           </View>
-          
+
         </View>
         <View style={styles.frameWrapper}>
           <View style={styles.frameContainer}>
@@ -53,7 +52,7 @@ export const Register1 = (props: {
                 <RNPTextInput
                   style={[styles.frameChild3, styles.frameChild3FlexBox]}
                   placeholder="Tên đăng nhập"
-                
+
                   mode="flat"
                   theme={{ colors: { background: "#fafafa" } }}
                 />
@@ -64,7 +63,7 @@ export const Register1 = (props: {
                 <RNPTextInput
                   style={[styles.frameChild3, styles.frameChild3FlexBox]}
                   placeholder="Mật khẩu"
-                
+
                   mode="flat"
                   theme={{ colors: { background: "#fafafa" } }}
                 />
@@ -76,7 +75,7 @@ export const Register1 = (props: {
                 <RNPTextInput
                   style={[styles.frameChild3, styles.frameChild3FlexBox]}
                   placeholder="Số điện thoại"
-                 
+
                   mode="flat"
                   placeholderTextColor="#1f1f1f"
                   theme={{ colors: { text: "#1f1f1f", background: "#fafafa" } }}
@@ -139,7 +138,7 @@ const styles = StyleSheet.create({
   },
   ngClr: {
     color: "#404040",
-    
+
   },
   childPosition: {
     left: "0%",
@@ -169,7 +168,7 @@ const styles = StyleSheet.create({
   },
   iuKhonTypo: {
     color: "#1f1f1f",
-   
+
     fontWeight: "600",
   },
   maskGroupIcon: {
@@ -201,7 +200,7 @@ const styles = StyleSheet.create({
     letterSpacing: -0.3,
     lineHeight: 39,
     color: "#1f1f1f",
-  
+
     fontWeight: "600",
   },
   inMtS: {
@@ -220,7 +219,7 @@ const styles = StyleSheet.create({
   frameGroup: {
     paddingTop: 96,
     alignItems: "center",
-    width: 430,
+    // width: 430,
     left: 0,
     top: 0,
     position: "absolute",
@@ -247,7 +246,7 @@ const styles = StyleSheet.create({
     left: "86.4%",
     position: "absolute",
   },
-  
+
   parent: {
     height: 37,
     flex: 1,
@@ -269,7 +268,7 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
   },
   tnNgNhp: {
-   
+
     fontWeight: "500",
     letterSpacing: 0.3,
     textAlign: "left",

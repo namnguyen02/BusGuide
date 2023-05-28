@@ -61,6 +61,8 @@ export const PermissionScreen = ({navigation}) =>  {
                       // value={form[id as keyof typeof form]}
                       value={form[id]}
                       onValueChange={value => setForm({ ...form, [id]: value })}
+                      trackColor={{false: '#fafafa', true: '#FF8811'}}
+                      thumbColor={form[id] ? '#ffffff' : '#E5F2FE'}
                     />
                   )}
                 </View>
