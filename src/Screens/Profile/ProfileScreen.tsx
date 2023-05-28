@@ -11,7 +11,6 @@ import {
   TextInput,
   Pressable
 } from 'react-native';
-import {Toast} from '@/Components/Toast';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
 export const Profile = () => {

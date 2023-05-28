@@ -16,11 +16,11 @@ import {
 import {Picker} from '@react-native-picker/picker';
 
 const NEWS = [
-    {id: 0, date: new Date(2023-4-10), image: {name: "1", uri: require('../../../assets/news/1.png')}, title: 'BusGuide với giao diện mới và tốc độ được cải thiện',},
-    {id: 1, date: new Date(2023-4-11), image: {name: "2", uri: require('../../../assets/news/2.png')}, title: 'Google Wallet hiện là tùy chọn thanh toán trực tiếp trong ứng dụng',},
-    {id: 2, date: new Date(2023-4-12), image: {name: "3", uri: require('../../../assets/news/3.png')}, title: 'Check in/out bằng điện thoại di động trên các chuyến đi',},
-    {id: 3, date: new Date(2023-4-13), image: {name: "4", uri: require('../../../assets/news/1.png')}, title: 'BusGuide với giao diện mới và tốc độ được cải thiện',},
-    {id: 4, date: new Date(2023-4-14), image: {name: "5", uri: require('../../../assets/news/1.png')}, title: 'BusGuide với giao diện mới và tốc độ được cải thiện',},
+    {id: 0, date: new Date("2023-4-10"), image: {name: "1", uri: require('../../../assets/news/1.png')}, title: 'BusGuide với giao diện mới và tốc độ được cải thiện',},
+    {id: 1, date: new Date("2023-4-11"), image: {name: "2", uri: require('../../../assets/news/2.png')}, title: 'Google Wallet hiện là tùy chọn thanh toán trực tiếp trong ứng dụng',},
+    {id: 2, date: new Date("2023-4-12"), image: {name: "3", uri: require('../../../assets/news/3.png')}, title: 'Check in/out bằng điện thoại di động trên các chuyến đi',},
+    {id: 3, date: new Date("2023-4-13"), image: {name: "4", uri: require('../../../assets/news/1.png')}, title: 'BusGuide với giao diện mới và tốc độ được cải thiện',},
+    {id: 4, date: new Date("2023-4-14"), image: {name: "5", uri: require('../../../assets/news/1.png')}, title: 'BusGuide với giao diện mới và tốc độ được cải thiện',},
 ]
 
 export const NewsScreen = ({navigation}) =>  {
@@ -148,6 +148,19 @@ const styles = StyleSheet.create({
         order: 0,
         alignSelf: "stretch",
         flexGrow: 0,
+
+
+        shadowColor: "#000",
+        shadowOffset:{
+            width: 0,
+            height: 1,
+            },
+        shadowOpacity: 0.20,
+        shadowRadius: 1.41,
+        elevation: 2,
+        marginHorizontal: 12,
+        marginVertical: 2,
+        overflow: 'hidden',
     },
     newImage: {
         position: "absolute",

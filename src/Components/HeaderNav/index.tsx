@@ -75,7 +75,7 @@ const styles=StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#1A1528',
         borderRadius: 16,
-        marginRight: 28,
+        marginRight: 12,
     },
     circle: {
         top: -3,

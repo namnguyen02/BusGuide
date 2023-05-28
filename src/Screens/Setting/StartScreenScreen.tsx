@@ -6,8 +6,11 @@ import {
     Text,
     Image,
     Pressable,
-    Alert
+    Alert,
+    Dimensions
   } from 'react-native';
+const screenHeight = Dimensions.get("window").height;
+
 
 export const StartScreenScreen = ({navigation}) =>  {
     const [startScreen, setStartScreen] = useState([false, true, false])
@@ -15,7 +18,7 @@ export const StartScreenScreen = ({navigation}) =>  {
 
     return (
       <SafeAreaView style={{backgroundColor: '#fff'}}>
-        <View style={{marginHorizontal: 24, marginVertical: 16}}>
+        <View style={{marginHorizontal: 24, marginVertical: 16, height: screenHeight}}>
             <View style={{marginBottom: 24}}>
                 <Text style={styles.title}>Màn hình bắt đầu</Text>
                 <Text style={styles.description}>Chọn màn hình xuất hiện khi mở ứng dụng</Text>
@@ -102,6 +105,7 @@ const styles = StyleSheet.create({
         alignSelf: "stretch",
         flexGrow: 0,
         // marginHorizontal:24,
+        marginTop: 12,
     },
     wrapper: {
     },

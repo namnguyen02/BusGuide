@@ -16,7 +16,16 @@ type LoginNavigatorProps = NativeStackScreenProps<
   RootStackParamList,
   RootScreens.LOGIN
 >;
-const Stack = createNativeStackNavigator();
+export type StackParamList = {
+  navigate: (screen?: string) => void;
+  goBack: () => void;
+  LoginStack: undefined;
+  LoginScreen: undefined;
+  ForgotPasswordPhoneNumber: undefined;
+  ForgotPasswordSecurityCode: undefined;
+  ForgotPasswordCreateNewPassword: undefined;
+};
+const Stack = createNativeStackNavigator<StackParamList>();
 // @refresh reset
 
 
@@ -28,9 +37,9 @@ export const LoginNavigator = ({
   };
 
   return (
-    <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
+    <Stack.Navigator initialRouteName="LoginStack" screenOptions={{ headerShown: false }}>
         <Stack.Screen
-            name="Login">
+            name="LoginScreen">
             {(props) => <Login onNavigate={onNavigate} />}
         </Stack.Screen>
         <Stack.Screen
@@ -45,7 +54,7 @@ export const LoginNavigator = ({
             name="ForgotPasswordCreateNewPassword">
             {(props) => <ForgotPasswordCreateNewPassword onNavigate={onNavigate} />}
         </Stack.Screen>
-      
+
     </Stack.Navigator>
   );
 };

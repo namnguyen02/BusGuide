@@ -4,6 +4,7 @@ import { StyleSheet, View, Text, TextInput, Pressable,Image } from "react-native
 import { Checkbox as RNPCheckbox } from "react-native-paper";
 import { RootScreens } from "..";
 import { useNavigation } from '@react-navigation/native';
+import {StackParamList} from '@/Navigation/Login'
 
 
 
@@ -14,7 +15,7 @@ export const Login = (props: {
 
 }) => {
   const [checkboxchecked, setCheckboxchecked] = useState(true);
-  const navigation = useNavigation();
+  const navigation = useNavigation<StackParamList>();
 
 
 

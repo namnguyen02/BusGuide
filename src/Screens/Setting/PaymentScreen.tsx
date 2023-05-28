@@ -12,12 +12,15 @@ import {
     Button,
     TextInput,
     Pressable,
+    Alert,
   } from 'react-native';
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export const PaymentScreen = ({navigation}) =>  {
-    const [text, onChangeText] = React.useState('');
+    const [info, setInfo] = React.useState([true, true]);
+    const [validDate, onChangeValidDate] = React.useState('');
+    const [code, onChangeCode] = React.useState('');
     const [number, onChangeNumber] = React.useState('');
     return (
       <SafeAreaView style={{backgroundColor: '#fff'}}>
@@ -29,7 +32,7 @@ export const PaymentScreen = ({navigation}) =>  {
 
         <View style={styles.Wrapper}>
             <View style={styles.methodWrapper}>
-                <View style={styles.methodType}>
+                <Pressable onPress={()=> setInfo({...info, [0]: !info[0]})} style={styles.methodType}>
                     {/* <Text>Google Wallet</Text> */}
                     <Image
                         style={{marginRight: 16}}
@@ -39,8 +42,8 @@ export const PaymentScreen = ({navigation}) =>  {
                         style={{}}
                         source={require('../../../assets/icons/setting/google_wallet.png')}
                     />
-                </View>
-                <View style={styles.methodInfoLink}>
+                </Pressable>
+                <View style={[styles.methodInfoLink, info[0]?{}:{display: 'none'}]}>
                     <View style={styles.methodRemainder}>
                         <Text style={{fontWeight: '700', fontSize: 14, color: "#9D9D9D", marginBottom: 8}}>Số dư</Text>
                         <Text style={{fontWeight: '600', fontSize: 20, color: "#1F1F1F" }}>195,00 VND</Text>
@@ -51,7 +54,7 @@ export const PaymentScreen = ({navigation}) =>  {
                 </View>
             </View>
             <View style={styles.methodWrapper}>
-                <View style={styles.methodType}>
+                <Pressable onPress={()=> setInfo({...info, [1]: !info[1]})} style={styles.methodType}>
                     <Image
                         style={{marginRight: 16}}
                         source={require('../../../assets/icons/setting/6_point.png')}
@@ -60,8 +63,8 @@ export const PaymentScreen = ({navigation}) =>  {
                         style={{}}
                         source={require('../../../assets/icons/setting/visa.png')}
                     />
-                </View>
-                <View style={styles.methodInfoLink}>
+                </Pressable>
+                <View style={[styles.methodInfoLink, info[1]?{}:{display: 'none'}]}>
                     <View style={{display:'flex', flexDirection: 'column', flex: 1}}>
                         <View style={styles.inputArea}>
                             <TextInput
@@ -82,15 +85,15 @@ export const PaymentScreen = ({navigation}) =>  {
                         <View style={styles.inputArea}>
                             <TextInput
                                 style={styles.input}
-                                onChangeText={onChangeNumber}
-                                value={text}
+                                onChangeText={onChangeValidDate}
+                                value={validDate}
                                 placeholder="MM/YYYY"
                                 keyboardType="default"
                             />
                             <TextInput
                                 style={styles.input}
-                                onChangeText={onChangeNumber}
-                                value={number}
+                                onChangeText={onChangeCode}
+                                value={code}
                                 placeholder="XXXX"
                                 keyboardType="default"
                             />
@@ -101,7 +104,7 @@ export const PaymentScreen = ({navigation}) =>  {
             </View>
         </View>
 
-        <Pressable style={styles.saveBtn}>
+        <Pressable style={styles.saveBtn} onPress={()=>{Alert.alert('Bạn đã lưu phương thức thanh toán thành công')}}>
             <Text style={{color: '#fff'}}>Lưu</Text>
         </Pressable>
         </ScrollView>
@@ -178,7 +181,6 @@ const styles = StyleSheet.create({
         height: 24,
         alignSelf: "stretch",
         flexGrow: 0,
-        marginBottom: 24,
     },
     methodInfoLink: {
         // marginHorizontal: 16,
@@ -190,6 +192,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         alignSelf: "stretch",
+        marginTop: 24,
 
     },
     methodRemainder: {

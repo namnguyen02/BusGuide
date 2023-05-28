@@ -1,3 +1,4 @@
+import { MyPage } from "@/Screens/Profile";
 import { Profile } from "@/Screens/Profile/ProfileScreen";
 import { Notification } from "@/Screens/Notification";
 import HeaderNav from "@/Components/HeaderNav";
@@ -12,9 +13,11 @@ export const ProfileStack = () => {
       initialRouteName="ProfileStack"
 
       screenOptions={({navigation, route}) => ({
-        headerTitle: () => <HeaderNav navigation={navigation} back={route.name==='Profile'? false:true}/>,
+        headerTitle: () => <HeaderNav navigation={navigation} back={route.name==='MyPage'? false:true}/>,
+        headerStyle: {backgroundColor: '#FFCE48'},
         headerBackVisible: false,
       })}>
+        <Stack.Screen name="MyPage" component={MyPage}/>
         <Stack.Screen name="Profile" component={Profile}/>
         <Stack.Screen name="Notification" component={Notification}/>
       </Stack.Navigator>

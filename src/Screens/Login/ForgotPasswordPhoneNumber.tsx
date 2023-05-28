@@ -3,12 +3,13 @@ import * as React from "react";
 import { StyleSheet, View, Text, TextInput, Pressable ,Image} from "react-native";
 import { RootScreens } from "..";
 import { useNavigation } from '@react-navigation/native';
+import {StackParamList} from '@/Navigation/Login'
 
 
 export const ForgotPasswordPhoneNumber = (props: {
   onNavigate: (string: RootScreens) => void;
 }) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<StackParamList>();
   return (
     <View style={styles.forgotPasswordPhoneNumber}>
       <View style={styles.frameParent}>

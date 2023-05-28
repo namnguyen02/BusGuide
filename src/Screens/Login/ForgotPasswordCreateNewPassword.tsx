@@ -3,12 +3,12 @@ import * as React from "react";
 import { StyleSheet, View, Text, TextInput, Pressable,Image } from "react-native";
 import { RootScreens } from "..";
 import { useNavigation } from '@react-navigation/native';
-
+import {StackParamList} from '@/Navigation/Login'
 
 export const ForgotPasswordCreateNewPassword = (props: {
   onNavigate: (string: RootScreens) => void;
 }) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<StackParamList>();
   return (
     <View style={[styles.forgotPasswordCreateNewC, styles.lockIconLayout1]}>
       <View style={[styles.frameParent, styles.frameFlexBox]}>
@@ -127,7 +127,7 @@ export const ForgotPasswordCreateNewPassword = (props: {
           <View style={styles.shadowChild} />
         </View>
         <View style={[styles.frameWrapper5, styles.frameSpaceBlock]}>
-          <Pressable style={[styles.xcNhnWrapper, styles.frameParent2FlexBox]} onPress={() => navigation.navigate('Login')}>
+          <Pressable style={[styles.xcNhnWrapper, styles.frameParent2FlexBox]} onPress={() => navigation.navigate('LoginScreen')}>
             <Text style={[styles.xcNhn, styles.xcNhnTypo]}>Xác nhận</Text>
           </Pressable>
         </View>
