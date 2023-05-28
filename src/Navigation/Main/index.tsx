@@ -4,6 +4,7 @@ import { HomeContainer } from "@/Screens/Home";
 import { SettingStack } from "@/Screens/Setting";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { ProfileStack } from "@/Navigation/Profile";
+import { TicketStack } from "@/Navigation/Ticket";
 const Tab = createBottomTabNavigator();
 
 // @refresh reset
@@ -28,11 +29,12 @@ export const MainNavigator = () => {
       />
       <Tab.Screen
         name="Vé của tôi"
-        component={HomeContainer}
+        component={TicketStack}
         options={{
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="ticket-confirmation-outline" color={color} size={size} />
           ),
+        headerShown: false
 
         }}
       />

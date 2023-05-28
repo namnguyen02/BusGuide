@@ -18,7 +18,6 @@ export const Register4 = (props: {
           <View style={styles.maskGroupParent}>
             <Image
               style={[styles.maskGroupIcon, styles.groupPosition]}
-              contentFit="cover"
               source={require("../../../assets/images/Register4/background.png")}
             />
             <View style={[styles.frameGroup, styles.frameSpaceBlock]}>
@@ -83,7 +82,7 @@ export const Register4 = (props: {
         <View style={[styles.shadowChild, styles.childPosition]} />
       </View>
       <View style={[styles.register3Child, styles.frameSpaceBlock]}>
-        <Pressable style={styles.honThnhWrapper} onPress={() => navigation.navigate('RegisterFinal')}>
+        <Pressable style={styles.honThnhWrapper} onPress={() => navigation.navigate('RegisterFinal' as never, {} as never)}>
           <Text style={styles.honThnh}>Hoàn thành</Text>
         </Pressable>
       </View>

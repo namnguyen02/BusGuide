@@ -127,7 +127,7 @@ export const ForgotPasswordCreateNewPassword = (props: {
           <View style={styles.shadowChild} />
         </View>
         <View style={[styles.frameWrapper5, styles.frameSpaceBlock]}>
-          <Pressable style={[styles.xcNhnWrapper, styles.frameParent2FlexBox]} onPress={() => navigation.navigate('Login')}>
+          <Pressable style={[styles.xcNhnWrapper, styles.frameParent2FlexBox]} onPress={() => navigation.navigate('Login' as never, {} as never)}>
             <Text style={[styles.xcNhn, styles.xcNhnTypo]}>Xác nhận</Text>
           </Pressable>
         </View>

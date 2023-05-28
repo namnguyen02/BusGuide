@@ -17,7 +17,6 @@ export const Register3 = (props: {
           <View style={styles.maskGroupParent}>
             <Image
               style={[styles.maskGroupIcon, styles.maskGroupIconPosition]}
-              contentFit="cover"
               source={require("../../../assets/images/Register3/background.png")}
             />
             <View style={[styles.frameContainer, styles.frameSpaceBlock]}>
@@ -39,7 +38,6 @@ export const Register3 = (props: {
           <View style={styles.vectorParent}>
             <Image
               style={styles.vectorIcon}
-              contentFit="cover"
               source={require("../../../assets/images/Register3/vector.png")}
             />
             <View style={[styles.frameView, styles.frameFlexBox]}>
@@ -47,7 +45,6 @@ export const Register3 = (props: {
                 <View>
                   <Image
                     style={styles.momoLogoIcon}
-                    contentFit="cover"
                     source={require("../../../assets/images/Register3/google_wallet.png")}
                   />
                 </View>
@@ -60,7 +57,6 @@ export const Register3 = (props: {
             </View>
             <Image
               style={styles.vectorIcon}
-              contentFit="cover"
               source={require("../../../assets/images/Register3/vector.png")}
             />
             <View style={styles.frameParent1}>
@@ -68,12 +64,10 @@ export const Register3 = (props: {
                 <View style={styles.rectangleParent}>
                   <Image
                     style={styles.groupIcon}
-                    contentFit="cover"
                     source={require("../../../assets/images/Register3/mastercard.png")}
                   />
                   <Image
                     style={styles.visaBrandmarkBlueRgb20211Icon}
-                    contentFit="cover"
                     source={require("../../../assets/images/Register3/visa.png")}
                   />
                 </View>
@@ -108,7 +102,6 @@ export const Register3 = (props: {
             </View>
             <Image
               style={styles.vectorIcon}
-              contentFit="cover"
               source={require("../../../assets/images/Register3/vector.png")}
             />
           </View>
@@ -117,10 +110,10 @@ export const Register3 = (props: {
           <View style={[styles.shadowChild, styles.childPosition]} />
         </View>
         <View style={[styles.frameParent4, styles.frameSpaceBlock]}>
-          <Pressable style={[styles.bQuaWrapper, styles.wrapperFlexBox]} onPress={() => navigation.navigate('Register4')}>
+          <Pressable style={[styles.bQuaWrapper, styles.wrapperFlexBox]} onPress={() => navigation.navigate('Register4' as never, {} as never)}>
             <Text style={[styles.bQua, styles.bQuaTypo]}>Bỏ qua</Text>
           </Pressable>
-          <Pressable style={[styles.tipTcWrapper, styles.wrapperFlexBox]} onPress={() => navigation.navigate('Register4')}>
+          <Pressable style={[styles.tipTcWrapper, styles.wrapperFlexBox]} onPress={() => navigation.navigate('Register4' as never, {} as never)}>
             <Text style={[styles.linKt, styles.bQuaTypo]}>Tiếp tục</Text>
           </Pressable>
         </View>

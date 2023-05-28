@@ -80,7 +80,7 @@ export const ForgotPasswordSecurityCode = (props: {
           <View style={styles.shadowChild} />
         </View>
         <View style={[styles.frameWrapper1, styles.frameSpaceBlock]}>
-          <Pressable style={styles.xcNhnWrapper} onPress={() => navigation.navigate('ForgotPasswordCreateNewPassword')}>
+          <Pressable style={styles.xcNhnWrapper} onPress={() => navigation.navigate('ForgotPasswordCreateNewPassword' as never, {} as never)}>
             <Text style={styles.xcNhn}>Xác nhận</Text>
           </Pressable>
         </View>

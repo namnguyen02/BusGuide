@@ -17,7 +17,6 @@ export const Register2 = (props: {
         <View style={styles.maskGroupParent}>
           <Image
             style={[styles.maskGroupIcon, styles.groupPosition]}
-            contentFit="cover"
             source={require("../../../assets/images/Register2/background.png")}
           />
           <View style={[styles.frameGroup, styles.frameSpaceBlock]}>
@@ -43,7 +42,6 @@ export const Register2 = (props: {
             <View style={styles.frameView}>
               <Image
                 style={[styles.frameIcon, styles.iconLayout]}
-                contentFit="cover"
                 source={require("../../../assets/images/Register2/image_picker.png")}
               />
             </View>
@@ -52,7 +50,6 @@ export const Register2 = (props: {
                 <View style={[styles.icons, styles.iconsFlexBox]}>
                   <Image
                     style={styles.iconLayout}
-                    contentFit="cover"
                     source={require("../../../assets/images/Register2/camera.png")}
                   />
                 </View>
@@ -67,10 +64,10 @@ export const Register2 = (props: {
           <View style={[styles.shadowChild, styles.childPosition]} />
         </View>
         <View style={[styles.frameParent2, styles.frameSpaceBlock]}>
-          <Pressable style={[styles.bQuaWrapper, styles.wrapperFlexBox]} onPress={() => navigation.navigate('Register3')}>
+          <Pressable style={[styles.bQuaWrapper, styles.wrapperFlexBox]} onPress={() => navigation.navigate('Register3' as never, {} as never)}>
             <Text style={[styles.bQua, styles.bQuaTypo]}>Bỏ qua</Text>
           </Pressable>
-          <Pressable style={[styles.tipTcWrapper, styles.wrapperFlexBox]} onPress={() => navigation.navigate('Register3')}>
+          <Pressable style={[styles.tipTcWrapper, styles.wrapperFlexBox]} onPress={() => navigation.navigate('Register3' as never, {} as never)}>
             <Text style={[styles.tipTc, styles.bQuaTypo]}>Tiếp tục</Text>
           </Pressable>
         </View>

@@ -18,7 +18,6 @@ export const RegisterFinal = (props: {
           <View style={[styles.logosParent, styles.btUWrapperFlexBox]}>
             <Image
               style={styles.logosIcon}
-              contentFit="cover"
               source={require("../../../assets/images/RegisterFinal/logo.png")}
             />
             <View style={[styles.welcomeParent, styles.welcomeParentFlexBox]}>
