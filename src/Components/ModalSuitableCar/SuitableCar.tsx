@@ -1,13 +1,15 @@
-import { View, Text,StyleSheet } from 'react-native'
+import { View, Text,StyleSheet,ScrollView, Touchable, Pressable } from 'react-native'
 import React from 'react'
+
 type GreetingProps = {
   name: string;
 };
 
 
-const SuitableCar = () => {
+const SuitableCar = ( {setModalCarInformation}) => {
   return (
-    <View style={styles.container}>
+    <Pressable style={styles.container}  onPress={()=>setModalCarInformation(true)}>
+      
       <View style={styles.context}>
           <View style={styles.name}>
               <Text style={{fontSize:20, fontWeight:'bold'}}>Tuyến số 8 </Text>
@@ -25,7 +27,10 @@ const SuitableCar = () => {
           <View style={styles.price}> 
             <Text>7k VNĐ</Text></View>
       </View>
-    </View>
+      
+      </Pressable>
+      
+    
   )
 }
 const styles=StyleSheet.create({

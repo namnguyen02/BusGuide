@@ -1,11 +1,12 @@
 import { View, Text ,StyleSheet, Pressable, Alert} from 'react-native'
 import React from 'react'
 
-const ButtonConfirm = ({setModalVisible,setSuitableVisible}) => {
+const ButtonConfirm = ({setModalVisible,setSuitableVisible,setIsMapFull}) => {
   return (
     <Pressable style={styles.container} 
         onPress={()=>{setModalVisible(false); //tat history modal
                 setSuitableVisible(true);  //hien cac chuyen xe phu hop
+                setIsMapFull(false); //tắt map full màn hình
                 console.log('nhan');
                 }}>
       <Text style={{color:'white'}}>Xác Nhận</Text>

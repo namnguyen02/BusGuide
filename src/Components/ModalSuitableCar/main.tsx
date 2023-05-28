@@ -1,8 +1,9 @@
-import { View, Text ,StyleSheet,Pressable,ScrollView} from 'react-native'
-import React from 'react'
+import { View, Text ,StyleSheet,Pressable,ScrollView, Modal} from 'react-native'
+import React,{useState} from 'react'
 import SuitableCar from './SuitableCar'
-
-const ModalSuitableCar = ({setModalSuitableVisible}) => {
+import  ModalCarInformation from '../ModalCarInformation/ModalCarInformation'
+const ModalSuitableCar = ({setModalSuitableVisible,setModalCarInformationVisible}) => {
+  
   return (
     <View style={styles.container}>
       <Text style={{fontSize:20, fontWeight:'bold'}}>Chuyến xe phù hợp</Text>
@@ -11,12 +12,13 @@ const ModalSuitableCar = ({setModalSuitableVisible}) => {
           <Text> Nhan no di</Text>
       </Pressable>
       <ScrollView style={styles.listbox} contentContainerStyle={{  alignItems:'center' }}>
-          <SuitableCar></SuitableCar>
-          <SuitableCar></SuitableCar>
-          <SuitableCar></SuitableCar>
-          <SuitableCar></SuitableCar>
+          <SuitableCar setModalCarInformation={setModalCarInformationVisible}></SuitableCar>
+          <SuitableCar setModalCarInformation={setModalCarInformationVisible}></SuitableCar>
+          <SuitableCar setModalCarInformation={setModalCarInformationVisible}></SuitableCar>
+          <SuitableCar setModalCarInformation={setModalCarInformationVisible}></SuitableCar>
       
       </ScrollView>
+      
     </View>
   )
 }

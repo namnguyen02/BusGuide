@@ -8,7 +8,7 @@ import PosImg2 from '../../../assets/PositionImg/img2.png'
 import PosImg3 from '../../../assets/PositionImg/img3.png'
 import ButtonConfirm from './ButtonConfirm'
 import SavedComponent from './SavedComponent'
-const ModalHistory = ({setModalVisible,setSuitableVisible}) => {
+const ModalHistory = ({setModalVisible,setSuitableVisible,setIsMapFull}) => {
   return (
     <View style={styles.container}>
           <Text style={{fontSize:20, fontWeight:'bold'}}>Lịch sử tìm kiếm</Text>
@@ -38,6 +38,7 @@ const ModalHistory = ({setModalVisible,setSuitableVisible}) => {
           
           <ButtonConfirm setSuitableVisible={setSuitableVisible}
                           setModalVisible={setModalVisible}
+                          setIsMapFull={setIsMapFull}
           ></ButtonConfirm>
           
 
