@@ -112,10 +112,10 @@ export const Register3 = (props: {
           <View style={[styles.shadowChild, styles.childPosition]} />
         </View>
         <View style={[styles.frameParent4, styles.frameSpaceBlock]}>
-          <Pressable style={[styles.bQuaWrapper, styles.wrapperFlexBox]} onPress={() => navigation.navigate('Register4')}>
+          <Pressable style={[styles.bQuaWrapper, styles.wrapperFlexBox]} onPress={() => navigation.navigate('Register4' as never, {} as never)}>
             <Text style={[styles.bQua, styles.bQuaTypo]}>Bỏ qua</Text>
           </Pressable>
-          <Pressable style={[styles.tipTcWrapper, styles.wrapperFlexBox]} onPress={() => navigation.navigate('Register4')}>
+          <Pressable style={[styles.tipTcWrapper, styles.wrapperFlexBox]} onPress={() => navigation.navigate('Register4' as never, {} as never)}>
             <Text style={[styles.linKt, styles.bQuaTypo]}>Tiếp tục</Text>
           </Pressable>
         </View>

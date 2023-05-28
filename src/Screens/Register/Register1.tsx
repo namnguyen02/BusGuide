@@ -110,7 +110,7 @@ export const Register1 = (props: {
           <View style={[styles.shadowChild, styles.childPosition]} />
         </View>
         <View style={[styles.frameWrapper1, styles.frameSpaceBlock]}>
-          <Pressable style={[styles.tipTcWrapper, styles.frameChild3FlexBox]} onPress={() => navigation.navigate('Register2')}>
+          <Pressable style={[styles.tipTcWrapper, styles.frameChild3FlexBox]} onPress={() => navigation.navigate('Register2' as never, {} as never)}>
             <Text style={[styles.tipTc, styles.mtKhuTypo]}>Tiếp tục</Text>
           </Pressable>
         </View>

@@ -69,7 +69,7 @@ export const ForgotPasswordPhoneNumber = (props: {
         </View>
         <View style={[styles.frameWrapper, styles.frameSpaceBlock]}>
           <Pressable style={[styles.giMBoMtWrapper, styles.frameItemFlexBox]}
-          onPress={() => navigation.navigate('ForgotPasswordSecurityCode')}
+          onPress={() => navigation.navigate('ForgotPasswordSecurityCode' as never, {} as never)}
           >
             <Text style={styles.giMBo}>Gửi mã bảo mật</Text>
           </Pressable>
