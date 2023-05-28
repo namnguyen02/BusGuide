@@ -9,24 +9,24 @@ const SearchBoxHome = ({setModalHistoryVisible}) => {
       
       <Pressable style={styles.sectionStyle}  onPress={()=>setModalHistoryVisible(true)}>
         
-            <View style={{flex:1,justifyContent:'center'}}> 
-            <FeatherIcon.ArrowDownCircle stroke='#fff' width={28} height={28}/>
+            <View style={{flex:1,justifyContent:'center',alignItems:'center'}}> 
+            <FeatherIcon.ArrowDownCircle stroke='#fff' width={24} height={24}/>
             </View>
             <View style={{flex:5,justifyContent:'center'}}>
                 <Text style={{color:'white'}}>268,Lý Thường Kiệt,Quận 10</Text>
             </View>
-            <FeatherIcon.X stroke='#fff' width={28} height={28}/>
+            <FeatherIcon.X stroke='#fff' width={24} height={24}/>
 
         </Pressable>
             
         <Pressable style={styles.sectionStyle}  onPress={()=>setModalHistoryVisible(true)}>
-                <View style={{flex:1,justifyContent:'center'}}> 
-                <FeatherIcon.Search stroke='#fff' width={28} height={28}/>
+                <View style={{flex:1,justifyContent:'center',alignItems:'center'}}> 
+                <FeatherIcon.Search stroke='#fff' width={24} height={24}/>
                 </View>
                 <View style={{flex:5,justifyContent:'center'}}>
                     <Text style={{color:'white'}}>Điểm đến</Text>
                 </View>
-                <FeatherIcon.Shuffle stroke='#fff' width={28} height={28}/>
+                <FeatherIcon.Shuffle stroke='#fff' width={24} height={24}/>
         </Pressable>
         
       </View>

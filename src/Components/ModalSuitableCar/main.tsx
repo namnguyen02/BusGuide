@@ -6,11 +6,9 @@ const ModalSuitableCar = ({setModalSuitableVisible,setModalCarInformationVisible
   
   return (
     <View style={styles.container}>
-      <Text style={{fontSize:20, fontWeight:'bold'}}>Chuyến xe phù hợp</Text>
+      <Text style={{fontSize:20, fontWeight:'bold',marginBottom:20}}>Chuyến xe phù hợp</Text>
       
-      <Pressable onPress={()=>setModalSuitableVisible(false)}>
-          <Text> Nhan no di</Text>
-      </Pressable>
+      
       <ScrollView style={styles.listbox} contentContainerStyle={{  alignItems:'center' }}>
           <SuitableCar setModalCarInformation={setModalCarInformationVisible}></SuitableCar>
           <SuitableCar setModalCarInformation={setModalCarInformationVisible}></SuitableCar>

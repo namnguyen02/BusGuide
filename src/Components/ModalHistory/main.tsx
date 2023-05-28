@@ -15,25 +15,25 @@ const ModalHistory = ({setModalVisible,setSuitableVisible,setIsMapFull}) => {
 
           <SearchBox></SearchBox>
 
-          <View style={{width:'90%',height:25 ,flexDirection:'row', backgroundColor:'blue'}}>
+          <View style={{width:'90%',height:25 ,flexDirection:'row', backgroundColor:'white'}}>
             <Icon name='history'></Icon>
             
             <Text>Gần đây</Text>
           </View>
-          <Position Img={PosImg1}></Position>
-          <Position Img={PosImg2}></Position>
-          <Position Img={PosImg3}></Position>
+          <Position Img={PosImg1} setModalVisible={setModalVisible} setSuitableVisible={setSuitableVisible} setIsMapFull={setIsMapFull}></Position>
+          <Position Img={PosImg2} setModalVisible={setModalVisible} setSuitableVisible={setSuitableVisible} setIsMapFull={setIsMapFull}></Position>
+          <Position Img={PosImg3} setModalVisible={setModalVisible} setSuitableVisible={setSuitableVisible} setIsMapFull={setIsMapFull}></Position>
 
-          <View style={{width:'90%',height:25 ,flexDirection:'row', backgroundColor:'blue'}}>
+          <View style={{width:'90%',height:25 ,flexDirection:'row', backgroundColor:'white'}}>
             
             
             <Text>Đã lưu</Text>
 
           </View>
           <ScrollView style={styles.saved} horizontal={true}>
-            <SavedComponent Type={1}></SavedComponent>
-            <SavedComponent Type={2}></SavedComponent>
-            <SavedComponent Type={3}></SavedComponent>
+            <SavedComponent Type={1} setModalVisible={setModalVisible} setSuitableVisible={setSuitableVisible} setIsMapFull={setIsMapFull}></SavedComponent>
+            <SavedComponent Type={2} setModalVisible={setModalVisible} setSuitableVisible={setSuitableVisible} setIsMapFull={setIsMapFull}></SavedComponent>
+            <SavedComponent Type={3} setModalVisible={setModalVisible} setSuitableVisible={setSuitableVisible} setIsMapFull={setIsMapFull}></SavedComponent>
           </ScrollView>
           
           <ButtonConfirm setSuitableVisible={setSuitableVisible}

@@ -1,7 +1,7 @@
-import { View, Text,StyleSheet } from 'react-native'
+import { View, Text,StyleSheet, Pressable } from 'react-native'
 import React from 'react'
-import { Icon } from 'react-native-elements'
-const SavedComponent = ({Type}) => {
+import * as icon from 'react-native-feather'
+const SavedComponent = ({Type,setModalVisible,setSuitableVisible,setIsMapFull}) => {
     let Name,Context
     if(Type==1)
     {
@@ -10,21 +10,34 @@ const SavedComponent = ({Type}) => {
     }
     if(Type==2)
     {
-        Name='home';
+        Name='school';
         Context='Trường học'
     }
     if(Type==3)
     {
-        Name='home';
+        Name='work';
         Context='Nơi làm việc'
     }
   return (
     
     
-        <View style={styles.container}>
-            <Icon name={Name} size={40}></Icon> 
+        <Pressable style={styles.container} onPress={()=>{setModalVisible(false); //tat history modal
+        setSuitableVisible(true);  //hien cac chuyen xe phu hop
+        setIsMapFull(false); //tắt map full màn hình
+        console.log('nhan');
+        }}>
+            <View style={{flex:1,alignItems:'center'}}>
+            {Name=='home'? <icon.Home width={30} height={30} color={'black'} ></icon.Home>:null}
+            {Name=='school'?<icon.BookOpen width={30} height={30} color={'black'}></icon.BookOpen>:null}
+            {Name=='work'?<icon.Calendar width={30} height={30} color={'black'}></icon.Calendar>:null}
+
+            </View>
+            <View style={{flex:3}}>
             <Text style={{fontSize:15, fontWeight:'bold'}}>{Context}</Text>
-        </View>  
+            </View>
+            
+            
+        </Pressable>  
     
     
       

@@ -1,7 +1,7 @@
 import { View, Text,StyleSheet ,Image} from 'react-native'
 import React from 'react'
 import Brand from '../../../assets/brand.png'
-
+import  * as FeatherIcon from 'react-native-feather' 
 import { Avatar, Icon } from 'react-native-elements';
 import {Notification} from '../../../assets/icons/notification.png'
 const Header = () => {
@@ -16,13 +16,16 @@ const Header = () => {
         
       </View>
       <View style={styles.notification}>
-        <Icon name='home' color={'white'}></Icon>
+        <View style={{width:30,height:30,backgroundColor:'#2A2537',borderRadius:10,justifyContent:'center', alignItems:'center'}}>
+        <FeatherIcon.Bell color={'white'} width={23} height={23}></FeatherIcon.Bell>
+        </View>
+        
       </View> 
 
       <View style={styles.avt}>
       <Avatar size='medium'
         rounded
-        icon={{name: 'user', type: 'font-awesome'}}
+        icon={{name: 'user', type: 'font-awesome', color:'black'}}
       />
         
       </View>
@@ -45,7 +48,6 @@ const styles=StyleSheet.create({
       
       flex :3,
       marginRight:30,
-     
       alignItems:'center'
       
     },
@@ -53,7 +55,9 @@ const styles=StyleSheet.create({
     notification:
     {
       
-      flex:1,
+      
+      alignItems:'center',
+      justifyContent:'center'
       
       
     },

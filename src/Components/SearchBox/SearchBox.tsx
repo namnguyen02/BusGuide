@@ -11,7 +11,7 @@ const SearchBox = ({setModalHistoryVisible}) => {
       <View style={styles.box}>
       
         <View style={styles.sectionStyle}>
-        <Icon name='location-pin' color={'white'}/>
+        <Icon name='location-pin' color={'white'} style={{width:28,height:28}}/>
         <TextInput
             style={{flex:1}}
           
