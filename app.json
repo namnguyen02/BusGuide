@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Expo Redux Template",
-    "slug": "busguide",
+    "slug": "expo-redux-template",
     "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,7 +13,7 @@
     },
     "updates": {
       "fallbackToCacheTimeout": 0,
-      "url": "https://u.expo.dev/915c7f06-1ac8-48e7-80eb-b8f0531e1961"
+      "url": "https://u.expo.dev/82716b8e-2818-4161-8a88-c571df4369a5"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -35,12 +35,11 @@
     "plugins": [],
     "extra": {
       "eas": {
-        "projectId": "915c7f06-1ac8-48e7-80eb-b8f0531e1961"
+        "projectId": "e3263603-2eab-49bf-bdea-841e02d32733"
       }
     },
     "runtimeVersion": {
       "policy": "sdkVersion"
-    },
-    "owner": "namnguyen02"
+    }
   }
 }
