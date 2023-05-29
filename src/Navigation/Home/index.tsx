@@ -13,7 +13,9 @@ export const HomeStack = () => {
         initialRouteName="HomeStack"
         screenOptions={({navigation, route}) => ({
           headerTitle: () => <HeaderNav navigation={navigation} back={route.name==='Home'? false:true}/>,
-          headerBackVisible: false,
+        headerStyle: {backgroundColor: '#FFCE48'},
+        headerBackVisible: false,
+
         //   headerShown: false,
         })}
         // {{

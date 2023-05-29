@@ -33,10 +33,10 @@ const ModalHistory = ({setModalVisible,setSuitableVisible,setIsMapFull}) => {
             <SavedComponent Type={3} setModalVisible={setModalVisible} setSuitableVisible={setSuitableVisible} setIsMapFull={setIsMapFull}></SavedComponent>
           </ScrollView>
 
-          {/* <ButtonConfirm setSuitableVisible={setSuitableVisible}
+          <ButtonConfirm setSuitableVisible={setSuitableVisible}
                           setModalVisible={setModalVisible}
                           setIsMapFull={setIsMapFull}
-          ></ButtonConfirm> */}
+          ></ButtonConfirm>
 
 
 

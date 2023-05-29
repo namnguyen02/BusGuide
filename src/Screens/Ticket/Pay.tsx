@@ -2,10 +2,11 @@ import * as React from "react";
 import { Checkbox as RNPCheckbox } from "react-native-paper";
 import { useState } from 'react';
 import { StyleSheet, Text, View, Pressable, Image, TextInput, Dimensions } from "react-native";
+import { Navigation } from "react-native-feather";
 
 const screenWidth = Dimensions.get("window").width;
 const screenHeight = Dimensions.get("window").height;
-export const TicketPay = () => {
+export const TicketPay = ({navigation}) => {
     const [isGoogleWallet, setGoogleWallet] = useState(1);
     function toCredit(event) {
         setGoogleWallet(0);
@@ -20,7 +21,7 @@ export const TicketPay = () => {
         <View style={styles.frameContainer}>
           <View style={styles.backgroundHeaderParent}>
             <Image
-              style={[styles.backgroundHeaderIcon, styles.frameGroupPosition]}
+              style={[styles.backgroundHeaderIcon, styles.frameGroupPosition, {resizeMode: 'stretch'}]}
               source={require("../../../assets/images/Ticket/background-header.png")}
             />
             <View style={[styles.frameGroup, styles.frameGroupPosition]}>
@@ -34,7 +35,7 @@ export const TicketPay = () => {
                   </Text>
                   <View style={[styles.icons, styles.iconsFlexBox]}>
                     <Image
-                      style={[styles.manIcon, styles.manIconLayout]}
+                      style={[styles.manIcon, styles.manIconLayout, {resizeMode:'stretch'}]}
                       source={require("../../../assets/images/Ticket/man.png")}
                     />
                   </View>
@@ -117,7 +118,7 @@ export const TicketPay = () => {
                 </View>
               </View>
               <View style={styles.paymentMethodsInner}>
-                <Pressable style={styles.thanhTonWrapper}>
+                <Pressable style={styles.thanhTonWrapper} onPress={()=>{navigation.navigate('YourTicket' as never)}}>
                   <Text style={[styles.thanhTon, styles.thanhTypo]}>
                     Thanh toán
                   </Text>
@@ -235,8 +236,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   frameGroupPosition: {
-    width: 430,
+    width: '100%',
     borderBottomLeftRadius: 24,
+    borderBottomRightRadius: 24,
     left: 0,
     top: 0,
     position: "absolute",
@@ -386,7 +388,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   frameParent2: {
-    width: 382,
+    // width: 382,
     backgroundColor: "#fafafa",
     borderRadius: 16,
   },
@@ -575,6 +577,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   frameView: {
+    width: '100%',
     paddingTop: 36,
     alignSelf: "stretch",
     flex: 1,
@@ -638,7 +641,7 @@ const styles = StyleSheet.create({
   },
   xframeParent3: {
     marginTop: 16,
-    width: 382,
+    // width: 382,
   },
   xluThngTinTypo: {
     color: "#404040",

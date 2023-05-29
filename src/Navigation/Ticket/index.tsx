@@ -16,11 +16,13 @@ export const TicketStack = () => {
       screenOptions={({navigation, route}) => ({
         headerTitle: () => <HeaderNav navigation={navigation} back={route.name==='Overview'? false:true}/>,
         headerBackVisible: false,
+        // headerStyle: {backgroundColor: '#FFCE48'},
+
       })}>
         <Stack.Screen name="Overview" component={TicketOverview}/>
         <Stack.Screen name="Pay" component={TicketPay}/>
         <Stack.Screen name="YourTicket" component={TicketYourTicket}/>
-        
+
 
 
       </Stack.Navigator>

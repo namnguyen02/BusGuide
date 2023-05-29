@@ -33,7 +33,7 @@ MainHeight=windowHeight;
 var MapHeight=MainHeight*0.5,HistoryHeight=MainHeight*0.5;
 
 
-export const Home = () => {
+export const Home = ({navigation}) => {
   const Stack=createNativeStackNavigator();
   const [modalHistoryVisible, setModalHistoryVisible] = useState(false);
   const [suitableVisible, setSuitableVisible] = useState(false);
@@ -62,7 +62,7 @@ export const Home = () => {
                 <Map setIsMapFull={setIsMapFull}></Map>
 
 
-              {!isMapFull&&<History setModalVisible={setModalHistoryVisible} ></History>}
+              {!isMapFull&&<History navigation={navigation} setModalVisible={setModalHistoryVisible} ></History>}
 
             </View>
           </ScrollView>

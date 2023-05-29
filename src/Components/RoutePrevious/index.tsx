@@ -13,8 +13,9 @@ import {
   Pressable
 } from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
+import { RootScreens } from "@/Screens";
 
-export const RoutePrevious = ({time, station}) => {
+export const RoutePrevious = ({time, station, navigation}) => {
     return (
         <View style={styles.card}>
             <View style={styles.circle1}></View>
@@ -42,7 +43,7 @@ export const RoutePrevious = ({time, station}) => {
                     </View>
                 </View>
             </View>
-            <View style={styles.btn}>
+            <Pressable onPress={()=>{navigation.navigate(RootScreens.MAIN, {screen:'Vé của tôi'})}} style={styles.btn}>
                 <FeatherIcon
                     // color="#616161"
                     name="arrow-right"
@@ -51,7 +52,7 @@ export const RoutePrevious = ({time, station}) => {
                     style={{}}
                     // size={22}
                 />
-            </View>
+            </Pressable>
         </View>
     )
 }

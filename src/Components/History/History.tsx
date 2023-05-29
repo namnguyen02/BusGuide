@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { RoutePrevious } from '../RoutePrevious'
 
 
-const History = ({setModalVisible}) => {
+const History = ({setModalVisible, navigation}) => {
 
   return (
     <View style={style.container}>
@@ -28,10 +28,10 @@ const History = ({setModalVisible}) => {
 
 
       <ScrollView style={style.main}  horizontal={true}  showsHorizontalScrollIndicator={false}>
-        <RoutePrevious time={'13:00'} station={'Đại học Bách Khoa'}/>
-        <RoutePrevious time={'13:30'} station={'KTX Khu A'}/>
-        <RoutePrevious time={'14:05'} station={'KTX Khu B'}/>
-        <RoutePrevious time={'15:05'} station={'Bến xe miền Đông'}/>
+        <RoutePrevious time={'13:00'} station={'Đại học Bách Khoa'} navigation={navigation}/>
+        <RoutePrevious time={'13:30'} station={'KTX Khu A'} navigation={navigation}/>
+        <RoutePrevious time={'14:05'} station={'KTX Khu B'} navigation={navigation}/>
+        <RoutePrevious time={'15:05'} station={'Bến xe miền Đông'} navigation={navigation}/>
       </ScrollView>
 
 

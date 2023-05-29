@@ -47,7 +47,7 @@ export const TicketOverview = () => {
                   </Text>
                 </View>
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                  <Pressable style={styles.ticketsWrapper} onPress={() => navigation.navigate('YourTicket' as never)}>
+                  <Pressable style={styles.ticketsWrapper} onPress={() => navigation.navigate('Pay' as never)}>
                     <View style={styles.tickets}>
                       <View style={styles.subtractParent}>
                         <Image
