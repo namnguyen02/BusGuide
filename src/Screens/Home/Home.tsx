@@ -59,7 +59,7 @@ export const Home = () => {
       <ScrollView style={{height: '100%', backgroundColor: '#fff'}}>
                 <View style={[{width:'100%',height: 800}, isMapFull?{height: 2000}:{}]}>
 
-              <Map setIsMapFull={setIsMapFull}></Map>
+                <Map setIsMapFull={setIsMapFull}></Map>
 
 
               {!isMapFull&&<History setModalVisible={setModalHistoryVisible} ></History>}

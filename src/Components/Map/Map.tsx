@@ -1,4 +1,4 @@
-import { View, Text,StyleSheet, Pressable } from 'react-native'
+import { View, Text,StyleSheet, Pressable,Image, ScrollView } from 'react-native'
 import React ,{useState} from 'react'
 import MapView ,{Marker,Polygon}from 'react-native-maps'
 // import MapViewDirections from 'react-native-maps-directions';
@@ -20,11 +20,8 @@ const Map = ({setIsMapFull}) => {
 const destination = {latitude: 37.771707, longitude: -122.4053769};
 
   return (
-    <Pressable style={styles.container} onPress={()=>setIsMapFull(true)}>
-      <MapView style={styles.map}
-                initialRegion={region}
+      <Pressable style={styles.container} onPress={()=>setIsMapFull(true)}>
 
-      >
         {/* <Marker coordinate={origin} />
         <Marker coordinate={destination} />
 
@@ -34,8 +31,15 @@ const destination = {latitude: 37.771707, longitude: -122.4053769};
         strokeWidth={3}
         /> */}
 
-        </MapView>
-    </Pressable>
+        <Image
+          style={styles.map}
+          source={require('../../../assets/map.png')}
+                    // initialRegion={region}
+
+        />
+
+        </Pressable>
+
   )
 }
 const styles=StyleSheet.create({
@@ -46,6 +50,7 @@ const styles=StyleSheet.create({
       map: {
         width: '100%',
         height: '100%',
+        zIndex: 1,
       },
 
 })
