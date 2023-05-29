@@ -12,13 +12,11 @@ import {
   Pressable
 } from 'react-native';
 import {Toast} from '@/Components/Toast';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-// import {Picker} from '@react-native-picker/picker';
-import SelectDropdown from 'react-native-select-dropdown'
-
+import FeatherIcon from 'react-native-vector-icons/Feather';
+import {Picker} from '@react-native-picker/picker';
 
 export const Notification = () => {
-    const [filter1, setfilter1] = useState('Gần đây')
+    const [filter1, setfilter1] = useState('newest')
     return (
         <SafeAreaView style={{backgroundColor: '#FFF'}}>
             <ScrollView>
@@ -36,8 +34,8 @@ export const Notification = () => {
 
                     </View>
                     <Text style={{marginBottom: 28, fontSize: 24, fontWeight: '700'}}>Thông báo mới</Text>
-                    {/* <View style={styles.selecter}> */}
-                        {/* <Picker
+                    <View style={styles.selecter}>
+                        <Picker
                             selectedValue={filter1}
                             style={{ height: 40, width: 135, margin: -6}}
                             itemStyle={{height: 20, width: 100}}
@@ -45,30 +43,8 @@ export const Notification = () => {
                         >
                             <Picker.Item style={{fontSize:14}} label="Gần đây" value="newest" />
                             <Picker.Item style={{fontSize:14}} label="Cũ nhất" value="oldest" />
-                        </Picker> */}
-                        <SelectDropdown
-                            data={['Gần đây', 'Cũ nhất']}
-                            onSelect={(selectedItem, index) => setfilter1(selectedItem)}
-                            buttonTextAfterSelection={(selectedItem, index) => {
-                                // text represented after item is selected
-                                // if data array is an array of objects then return selectedItem.property to render after item is selected
-                                return selectedItem
-                            }}
-                            rowTextForSelection={(item, index) => {
-                                // text represented for each item in dropdown
-                                // if data array is an array of objects then return item.property to represent item in dropdown
-                                return item
-                            }}
-                            renderDropdownIcon={isOpened => {
-                                return <FontAwesome name={isOpened ? 'chevron-up' : 'chevron-down'} color={'#444'} size={18} />;
-                            }}
-                            // dropdownIconPosition="left"
-                            dropdownIconPosition={'right'}
-                            buttonStyle={[styles.selecter, {width: 135}]}
-                            dropdownStyle={{borderRadius: 16}}
-                            defaultValue={filter1}
-                        />
-                    {/* </View> */}
+                        </Picker>
+                    </View>
                 </View>
 
                 <View style={styles.notifyList}>

@@ -13,8 +13,7 @@ import {
     TextInput,
     Pressable,
   } from 'react-native';
-import SelectDropdown from 'react-native-select-dropdown'
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import {Picker} from '@react-native-picker/picker';
 
 const NEWS = [
     {id: 0, date: new Date("2023-4-10"), image: {name: "1", uri: require('../../../assets/news/1.png')}, title: 'BusGuide với giao diện mới và tốc độ được cải thiện',},
@@ -25,73 +24,32 @@ const NEWS = [
 ]
 
 export const NewsScreen = ({navigation}) =>  {
-    const [filter1, setfilter1] = useState('Gần đây');
-    const [filter2, setfilter2] = useState("Tất cả");
+    const [filter1, setfilter1] = useState("newest");
+    const [filter2, setfilter2] = useState("all");
     return (
       <SafeAreaView >
         <ScrollView contentContainerStyle={styles.container}>
             <Text style={styles.title}>Tin tức</Text>
             <View style={styles.filterWrapper}>
-                    {/* <Picker
+                <View style={styles.dateFilter}>
+                    <Picker
                         selectedValue={filter1}
                         style={{ height: 50, width: 140}}
                         onValueChange={(itemValue, itemIndex) => setfilter1(itemValue)}
                     >
                         <Picker.Item label="Gần đây" value="newest" />
                         <Picker.Item label="Cũ nhất" value="oldest" />
-                    </Picker> */}
-                    <SelectDropdown
-                        data={['Gần đây', 'Cũ nhất']}
-                        onSelect={(selectedItem, index) => setfilter1(selectedItem)}
-                        buttonTextAfterSelection={(selectedItem, index) => {
-                            // text represented after item is selected
-                            // if data array is an array of objects then return selectedItem.property to render after item is selected
-                            return selectedItem
-                        }}
-                        rowTextForSelection={(item, index) => {
-                            // text represented for each item in dropdown
-                            // if data array is an array of objects then return item.property to represent item in dropdown
-                            return item
-                        }}
-                        renderDropdownIcon={isOpened => {
-                            return <FontAwesome name={isOpened ? 'chevron-up' : 'chevron-down'} color={'#444'} size={18} />;
-                        }}
-                        // dropdownIconPosition="left"
-                        dropdownIconPosition={'right'}
-                        buttonStyle={styles.dateFilter}
-                        dropdownStyle={{borderRadius: 16}}
-                        defaultValue={filter1}
-                    />
-
-                    <SelectDropdown
-                        data={['Tất cả']}
-                        onSelect={(selectedItem, index) => setfilter2(selectedItem)}
-                        buttonTextAfterSelection={(selectedItem, index) => {
-                            // text represented after item is selected
-                            // if data array is an array of objects then return selectedItem.property to render after item is selected
-                            return selectedItem
-                        }}
-                        rowTextForSelection={(item, index) => {
-                            // text represented for each item in dropdown
-                            // if data array is an array of objects then return item.property to represent item in dropdown
-                            return item
-                        }}
-                        renderDropdownIcon={isOpened => {
-                            return <FontAwesome name={isOpened ? 'chevron-up' : 'chevron-down'} color={'#444'} size={18} />;
-                        }}
-                        // dropdownIconPosition="left"
-                        dropdownIconPosition={'right'}
-                        buttonStyle={styles.dateFilter}
-                        dropdownStyle={{borderRadius: 16}}
-                        defaultValue={filter2}
-                    />
-                    {/* <Picker
+                    </Picker>
+                </View>
+                <View style={styles.dateFilter}>
+                    <Picker
                         selectedValue={filter2}
                         style={{ height: 50, width: 130}}
                         onValueChange={(itemValue, itemIndex) => setfilter2(itemValue)}
                     >
                         <Picker.Item label="Tất cả" value="all" />
-                    </Picker> */}
+                    </Picker>
+                </View>
 
 
             </View>
@@ -151,15 +109,18 @@ const styles = StyleSheet.create({
     },
     dateFilter: {
         boxSizing: "border-box",
-        // display: "flex",
-        // flexDirection: "row",
-        // justifyContent: "center",
-        // alignItems: "center",
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
         // padding: "10px 14px 10px 20px",
-        // paddingVertical: 10,
+        paddingVertical: 10,
         width: 120,
         height: 44,
+        border: "1px solid #D9D9D9",
         borderRadius: 16,
+        order: 0,
+        flexGrow: 0,
 
         borderColor: "#D9D9D9",
         borderWidth: 1,

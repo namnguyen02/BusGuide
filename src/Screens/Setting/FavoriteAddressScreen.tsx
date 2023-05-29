@@ -13,13 +13,8 @@ import {
     Pressable,
     TextInput,
     Modal,
-    Dimensions
   } from 'react-native';
-// import {Picker} from '@react-native-picker/picker';
-import SelectDropdown from 'react-native-select-dropdown'
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-
-const screenWidth = Dimensions.get('window').width
+import {Picker} from '@react-native-picker/picker';
 
 export const FavoriteAddressScreen = ({navigation}) =>  {
     const [addressList, setAddressList] = useState([
@@ -142,7 +137,7 @@ export const FavoriteAddressScreen = ({navigation}) =>  {
                             keyboardType="default"
                           /> */}
                           <View style={{overflow: 'hidden', borderRadius: 16}}>
-                            {/* <Picker
+                            <Picker
                                 style={styles.input}
                                 selectedValue={address.district}
                                 onValueChange={(value)=>{
@@ -160,45 +155,7 @@ export const FavoriteAddressScreen = ({navigation}) =>  {
                                 <Picker.Item label="Quận 8" value="Quận 8" />
                                 <Picker.Item label="Quận 9" value="Quận 9" />
                                 <Picker.Item label="Quận 10" value="Quận 10" />
-                            </Picker> */}
-                            <SelectDropdown
-                              data={["TP. Thủ Đức","Quận 1",
-                              "Quận 2",
-                              "Quận 3",
-                              "Quận 4",
-                              "Quận 5",
-                              "Quận 6",
-                              "Quận 7",
-                              "Quận 8",
-                              "Quận 9",
-                              "Quận 10",]}
-                              onSelect={(selectedItem, index) => handleChange(id, 'district', selectedItem)}
-                              defaultButtonText={"Chọn Quận"}
-
-                              buttonTextAfterSelection={(selectedItem, index) => {
-                                  // text represented after item is selected
-                                  // if data array is an array of objects then return selectedItem.property to render after item is selected
-                                  return selectedItem
-                              }}
-                              rowTextForSelection={(item, index) => {
-                                  // text represented for each item in dropdown
-                                  // if data array is an array of objects then return item.property to represent item in dropdown
-                                  return item
-                              }}
-                              renderDropdownIcon={isOpened => {
-                                  return <FontAwesome name={isOpened ? 'chevron-up' : 'chevron-down'} color={'#444'} size={18} />;
-                              }}
-                              // dropdownIconPosition="left"
-                              dropdownIconPosition={'right'}
-                              buttonStyle={{height: 60,
-                                backgroundColor: "#FAFAFA",
-                                borderRadius: 16,
-                                width: screenWidth/2 - 30,
-
-                              }}
-                              dropdownStyle={{borderRadius: 16}}
-                              defaultValue={address.district}
-                          />
+                            </Picker>
                           </View>
                         </View>
                         <View style={styles.subArea}>
@@ -211,7 +168,7 @@ export const FavoriteAddressScreen = ({navigation}) =>  {
                             keyboardType="default"
                           /> */}
                           <View style={{overflow: 'hidden', borderRadius: 16}}>
-                            {/* <Picker
+                            <Picker
                                 style={styles.input}
                                 selectedValue={address.ward}
                                 onValueChange={(value)=>{
@@ -219,35 +176,7 @@ export const FavoriteAddressScreen = ({navigation}) =>  {
                                 }}
                             >
                                 <Picker.Item label="Linh Trung" value="Linh Trung"/>
-                            </Picker> */}
-                            <SelectDropdown
-                              data={['Linh Trung']}
-                              defaultButtonText={"Chọn phường"}
-                              onSelect={(selectedItem, index) => handleChange(id, 'ward', selectedItem)}
-                              buttonTextAfterSelection={(selectedItem, index) => {
-                                  // text represented after item is selected
-                                  // if data array is an array of objects then return selectedItem.property to render after item is selected
-                                  return selectedItem
-                              }}
-                              rowTextForSelection={(item, index) => {
-                                  // text represented for each item in dropdown
-                                  // if data array is an array of objects then return item.property to represent item in dropdown
-                                  return item
-                              }}
-                              renderDropdownIcon={isOpened => {
-                                  return <FontAwesome name={isOpened ? 'chevron-up' : 'chevron-down'} color={'#444'} size={18} />;
-                              }}
-                              // dropdownIconPosition="left"
-                              dropdownIconPosition={'right'}
-                              buttonStyle={{height: 60,
-                                backgroundColor: "#FAFAFA",
-                                borderRadius: 16,
-                                width: screenWidth/2 - 30,
-
-                              }}
-                              dropdownStyle={{borderRadius: 16}}
-                              defaultValue={address.ward}
-                          />
+                            </Picker>
                           </View>
                         </View>
                       </View>
