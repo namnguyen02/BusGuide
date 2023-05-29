@@ -112,7 +112,7 @@ export const SettingScreen = ({navigation}) =>  {
                       index === 0 && { borderTopWidth: 0 },
                     ]}>
                     <TouchableOpacity
-                      onPress={() => navigation.navigate(screen) }>
+                      onPress={() => {screen==''?navigation.navigate(screen):{}} }>
                       <View style={styles.row}>
                         <View style={styles.rowIconWrapper}>
                           {icon_type === 'Feather' &&

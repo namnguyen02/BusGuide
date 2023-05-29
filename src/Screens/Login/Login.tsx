@@ -111,7 +111,7 @@ export const Login = (props: {
                           </Text>
                         </View>
                       </View>
-                      <Pressable onPress={() => navigation.navigate('ForgotPasswordPhoneNumber' as never, {} as never)}>
+                      <Pressable onPress={() => navigation.navigate('ForgotPasswordPhoneNumber')}>
                         <View style={styles.qunMtKhuWrapper}>
                           <Text style={[styles.nhMtKhu, styles.nhpTypo]}>
                             Quên mật khẩu?
