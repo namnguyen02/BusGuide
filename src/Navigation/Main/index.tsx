@@ -1,6 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { HomeContainer } from "@/Screens/Home";
+import { HomeStack } from "@/Navigation/Home";
 import { SettingStack } from "@/Screens/Setting";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { ProfileStack } from "@/Navigation/Profile";
@@ -14,8 +15,8 @@ export const MainNavigator = () => {
 
 
       <Tab.Screen
-        name="Home"
-        component={HomeContainer}
+        name="HomeStack"
+        component={HomeStack}
         options={{
 
             headerShown: false,

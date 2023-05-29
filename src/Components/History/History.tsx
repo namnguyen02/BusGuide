@@ -41,7 +41,7 @@ const History = ({setModalVisible}) => {
 const style=StyleSheet.create({
   container:{
     width:'100%',
-    height:'30%',
+    height: 300,
     backgroundColor:'#fff',
 
   },
@@ -74,7 +74,7 @@ const style=StyleSheet.create({
 
   },
   main:{
-    paddingHorizontal: 10, marginVertical: 12
+    paddingHorizontal: 10, marginVertical: 12,
 
 
   }

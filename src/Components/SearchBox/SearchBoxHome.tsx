@@ -13,7 +13,7 @@ const SearchBoxHome = ({setModalHistoryVisible}) => {
             <FeatherIcon.ArrowDownCircle stroke='#fff' width={20} height={20}/>
             </View>
             <View style={{flex:5,justifyContent:'center'}}>
-                <Text style={{color:'white'}}>268, Lý Thường Kiệt, Quận 10</Text>
+                <TextInput style={{color:'white'}}>268, Lý Thường Kiệt, Quận 10</TextInput>
             </View>
             <FeatherIcon.X stroke='#fff' width={20} height={20} style={{marginHorizontal: 8}}/>
 
@@ -24,7 +24,7 @@ const SearchBoxHome = ({setModalHistoryVisible}) => {
                 <FeatherIcon.Search stroke='#fff' width={20} height={20}/>
                 </View>
                 <View style={{flex:5,justifyContent:'center'}}>
-                    <Text style={{color:'white'}}>Điểm đến</Text>
+                    <TextInput style={{color:'white'}}>Điểm đến</TextInput>
                 </View>
                 <FeatherIcon.Shuffle stroke='#fff' width={20} height={20} style={{marginHorizontal: 8}}/>
         </Pressable>

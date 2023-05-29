@@ -1,9 +1,9 @@
 import { i18n, LocalizationKey } from "@/Localization";
 import React,{useState,useEffect} from "react";
-import { View, Text, StyleSheet ,Modal,Pressable,Button,BackHandler,Alert,Dimensions, Touchable, TurboModuleRegistry, Scroll} from "react-native";
+import { View, Text, StyleSheet ,Modal,Pressable,Button,BackHandler,Alert,Dimensions, Touchable, TurboModuleRegistry, ScrollView} from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { HStack, Spinner, Heading } from "native-base";
-import { User } from "@/Services";
+// import { User } from "@/Services";
 import SearchBox from "@/Components/SearchBox/SearchBox";
 import SearchBoxHome from "@/Components/SearchBox/SearchBoxHome";
 import SearchBoxHomeMin from "@/Components/SearchBox/SearchBoxHomeMin";
@@ -21,18 +21,19 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 
-export interface IHomeProps {
-  data: User | undefined;
-  isLoading: boolean;
-}
+// export interface IHomeProps {
+//   data: User | undefined;
+//   isLoading: boolean;
+// }
 const windowHeight=Dimensions.get('window').height;
 const windowWidth=Dimensions.get('window').width;
 
-var SearchViewHeight=windowHeight*0.28,MainHeight=windowHeight*0.65;
+var SearchViewHeight=windowHeight,
+MainHeight=windowHeight;
 var MapHeight=MainHeight*0.5,HistoryHeight=MainHeight*0.5;
 
 
-export const Home = (props: IHomeProps) => {
+export const Home = () => {
   const Stack=createNativeStackNavigator();
   const [modalHistoryVisible, setModalHistoryVisible] = useState(false);
   const [suitableVisible, setSuitableVisible] = useState(false);
@@ -43,27 +44,28 @@ export const Home = (props: IHomeProps) => {
   const [ModalHeaderTutorVisible, setModalHeaderTutorVisible] = useState(false)
 
 
-  const { data, isLoading } = props;
+  // const { data, isLoading } = props;
 
 
   if(isMapFull){
-      SearchViewHeight=windowHeight*0.14;
+      SearchViewHeight=windowHeight;
 
   };
 
 
-  const Main_map=({navigation})=>{
-    if(suitableVisible) { navigation.navigate('Main_Suitable')};
+  const Main_map=()=>{
     return (
 
-          <View style={{height:'100%',width:'100%'}}  >
+      <ScrollView style={{height: '100%', backgroundColor: '#fff'}}>
+                <View style={[{width:'100%',height: 800}, isMapFull?{height: 2000}:{}]}>
 
               <Map setIsMapFull={setIsMapFull}></Map>
 
 
-             <History setModalVisible={setModalHistoryVisible} ></History>
+              {!isMapFull&&<History setModalVisible={setModalHistoryVisible} ></History>}
 
-          </View>
+            </View>
+          </ScrollView>
 
 
 
@@ -71,17 +73,14 @@ export const Home = (props: IHomeProps) => {
 
 
   };
-  const Main_Suitable=({navigation})=>{
-    setSuitableVisible(false);
-    if (isMapFull) {navigation.navigate('Main_map')}
+  const Main_Suitable=()=>{
+    // setSuitableVisible(false);
     return (
 
 
           <ModalSuitableCar
           setModalSuitableVisible={setSuitableVisible}
-          setModalCarInformationVisible={setModalCarInformationVisible}>
-
-          </ModalSuitableCar>
+          setModalCarInformationVisible={setModalCarInformationVisible}></ModalSuitableCar>
 
     );
   };
@@ -92,12 +91,12 @@ export const Home = (props: IHomeProps) => {
 
 
 
-    <View style={styles.container}>
-      <View style={styles.top}>
+      <View style={styles.container}>
+      {/* <View style={styles.top}>
 
         <View style={styles.space}></View>
         <Header></Header>
-      </View>
+      </View> */}
 
       <View style={!isMapFull?styles.searchBoxView1:styles.searchBoxView2}>
         {isMapFull?
@@ -109,7 +108,7 @@ export const Home = (props: IHomeProps) => {
      </View>
 
       <View style={!isMapFull?styles.main1:styles.main2}>
-          <NavigationContainer independent={true}>
+          {/* <NavigationContainer independent={true}>
             <Stack.Navigator screenOptions={{headerShown:false}}>
               <Stack.Screen
                 name="Main_map"
@@ -119,8 +118,11 @@ export const Home = (props: IHomeProps) => {
 
               <Stack.Screen name="Main_Suitable" component={Main_Suitable} />
             </Stack.Navigator>
-          </NavigationContainer>
+          </NavigationContainer> */}
+          {!isMapFull&&!suitableVisible&&<Main_map></Main_map>}
+          {isMapFull&&!suitableVisible&&<Main_map></Main_map>}
 
+          {suitableVisible&&<Main_Suitable></Main_Suitable>}
       </View>
 
 
@@ -184,7 +186,7 @@ export const Home = (props: IHomeProps) => {
        </Modal>
 
 
-       {isLoading ? (
+       {/* {isLoading ? (
         <HStack space={2} justifyContent="center">
           <Spinner accessibilityLabel="Loading posts" />
           <Heading color="primary.500" fontSize="md">
@@ -198,7 +200,7 @@ export const Home = (props: IHomeProps) => {
             {data?.username}
           </Heading>
         </>
-      )}
+      )} */}
 
     </View>
   );
@@ -211,45 +213,46 @@ const styles = StyleSheet.create({
   space:{
     backgroundColor:"#FFCE48",
     width:'100%',
-    height:'50%',
+    // height:'50%',
   },
   container: {
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
+    height: 1500
 
   },
 
   top:{
     backgroundColor:"#FFCE48",
     width:'100%',
-    height:'10%',
+    // height:'10%',
     alignItems: "center",
 
   }
   ,main1:
   {
     width:"100%",
-    height:'90%',
+    // height:'90%',
     backgroundColor:'black'
 
   },
   main2:
   {
     width:"100%",
-    height:'190%',
+    // height:'190%',
     backgroundColor:'black'
 
   },
   searchBoxView1:{
     width:"100%",
-    height:'28%',
+    // height:'28%',
     alignItems:'center'
     ,backgroundColor:"#FFCE48",
   },
   searchBoxView2:{
     width:"100%",
-    height:'14%',
+    // height:'14%',
     alignItems:'center'
     ,backgroundColor:"#FFCE48",
   }

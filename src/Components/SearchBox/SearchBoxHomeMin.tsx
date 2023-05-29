@@ -13,7 +13,7 @@ const SearchBoxHomeMin = ({setModalHistoryVisible}) => {
           <Icon name='location-pin' size={20} color={'white'}/>
           </View>
           <View style={{flex:5,justifyContent:'center'}}>
-            <Text style={{color:'white'}}>Điểm đến?</Text>
+            <TextInput style={{color:'white'}}>Điểm đến?</TextInput>
           </View>
           <View style={{flex:1,justifyContent:'center'}}>
 

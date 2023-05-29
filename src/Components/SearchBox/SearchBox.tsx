@@ -13,7 +13,7 @@ const SearchBox = ({setModalHistoryVisible}) => {
         <View style={styles.sectionStyle}>
         <Icon name='location-pin' color={'white'} size={20} style={{marginHorizontal: 12}}/>
         <TextInput
-            style={{flex:1}}
+            style={{flex:1, color: '#fff'}}
 
             placeholder="Vị trí của bạn"
             onSubmitEditing={Keyboard.dismiss}
@@ -29,7 +29,7 @@ const SearchBox = ({setModalHistoryVisible}) => {
         <View style={styles.sectionStyle}>
         <FeatherIcon.Search stroke='#fff' width={20} height={20} style={{marginHorizontal: 12}}/>
           <TextInput
-            style={{flex: 1}}
+            style={{flex: 1, color: '#fff'}}
             placeholder="Bạn muốn đi đâu?"
             underlineColorAndroid="transparent"
             placeholderTextColor={'white'}

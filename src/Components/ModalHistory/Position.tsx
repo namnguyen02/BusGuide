@@ -4,7 +4,9 @@ import React from 'react'
 import * as icon  from 'react-native-feather'
 const Position = ({Img,setModalVisible,setSuitableVisible,setIsMapFull}) => {
   return (
-    <Pressable  onPress={()=>{setModalVisible(false); //tat history modal
+    <Pressable  onPress={()=>{
+
+      setModalVisible(false); //tat history modal
     setSuitableVisible(true);  //hien cac chuyen xe phu hop
     setIsMapFull(false); //tắt map full màn hình
     console.log('nhan');

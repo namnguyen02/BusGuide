@@ -34,21 +34,17 @@ const ApplicationNavigator = () => {
           component={LoginNavigator}
         />
         <RootStack.Screen
-          name={RootScreens.WELCOME}
-          component={WelcomeContainer}
-        />
-        <RootStack.Screen
           name={RootScreens.MAIN}
           component={MainNavigator}
         />
-        
+
         <RootStack.Screen
           name={RootScreens.REGISTER}
           component={RegisterNavigator}
         />
-        
-        
-        
+
+
+
       </RootStack.Navigator>
     </NavigationContainer>
   );
